@@ -10,9 +10,23 @@ config_version=5
 
 [application]
 
-config/name="Nuevo Proyecto de Juego"
+config/name="Over Code"
+run/main_scene="uid://5or7blq2mubw"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+TransitionManager="*res://Scenes/transition.tscn"
+SaveManager="*res://Scripts/SaveManager.gd"
+Global="*res://Scripts/Global.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [rendering]
 

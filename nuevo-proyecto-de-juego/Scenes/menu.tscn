@@ -1,8 +1,42 @@
-[gd_scene load_steps=4 format=3 uid="uid://5or7blq2mubw"]
+[gd_scene load_steps=13 format=3 uid="uid://5or7blq2mubw"]
 
-[ext_resource type="Script" uid="uid://dxee0eb05sdir" path="res://Scripts/menu.gd" id="1_cayip"]
-[ext_resource type="Texture2D" uid="uid://cm3uxmih4ek04" path="res://field.png" id="2_158mb"]
+[ext_resource type="Texture2D" uid="uid://ddboffungdf1q" path="res://Sprites/sky.png" id="2_wbdvm"]
+[ext_resource type="Shader" path="res://Shaders/movimientoNubes.gdshader" id="3_q3rjx"]
 [ext_resource type="FontFile" uid="uid://baaqbul0ssy6w" path="res://Pixeled.ttf" id="3_wwsa2"]
+[ext_resource type="Texture2D" uid="uid://4olivh7yjon7" path="res://Sprites/Sprite-0003-pantalla de inmontañas.png" id="4_6swd7"]
+[ext_resource type="Shader" path="res://Shaders/movimientoMontañas.gdshader" id="5_7qvly"]
+[ext_resource type="Texture2D" uid="uid://blgjlhftxngn5" path="res://Sprites/Sprite-000montañas2.png" id="6_wbdvm"]
+[ext_resource type="Texture2D" uid="uid://dwhli5cfyqot0" path="res://Sprites/Sprite-0002- Titulo 2 OVER CODE-Recovered-1.png" id="7_6swd7"]
+[ext_resource type="Texture2D" uid="uid://c1firc88fpvua" path="res://Sprites/Sprite-0002- Titulo 2 OVER CODE-Recovered-2.png" id="8_7qvly"]
+
+[sub_resource type="GDScript" id="GDScript_q3rjx"]
+script/source = "extends Control
+
+
+
+func _on_jugar_pressed() -> void:
+	TransitionManager.cambiar_escena(\"res://Scenes/jugar.tscn\")
+
+func _on_opciones_pressed() -> void:
+	TransitionManager.cambiar_escena(\"res://Scenes/opciones.tscn\")
+
+
+func _on_salir_pressed() -> void:
+	get_tree().quit()
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g8i7c"]
+shader = ExtResource("3_q3rjx")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_23t3j"]
+shader = ExtResource("5_7qvly")
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_rfqti"]
+frames = 2
+speed_scale = -8.0
+frame_0/texture = ExtResource("7_6swd7")
+frame_1/texture = ExtResource("8_7qvly")
+frame_1/duration = 1.0
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -11,49 +45,91 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_cayip")
+script = SubResource("GDScript_q3rjx")
 
-[node name="ColorRect" type="TextureRect" parent="."]
+[node name="fondo" type="TextureRect" parent="."]
+texture_repeat = 2
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_158mb")
+texture = ExtResource("2_wbdvm")
+
+[node name="nubes" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_g8i7c")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_6swd7")
+
+[node name="montañas" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_23t3j")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_wbdvm")
+
+[node name="Titulo" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.38000003
+anchor_right = 0.5
+anchor_bottom = 0.38000003
+offset_left = -388.0
+offset_top = -242.24002
+offset_right = 392.0
+offset_bottom = 200.75998
+texture = SubResource("AnimatedTexture_rfqti")
 
 [node name="BoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 0.71500003
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 0.71500003
 offset_left = -136.0
-offset_top = -85.0
+offset_top = -76.32001
 offset_right = 136.0
-offset_bottom = 85.0
+offset_bottom = 117.67999
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="BoxContainer"]
+[node name="Jugar" type="Button" parent="BoxContainer"]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("3_wwsa2")
+theme_override_font_sizes/font_size = 20
 text = "Jugar"
 
-[node name="Button2" type="Button" parent="BoxContainer"]
+[node name="Opciones" type="Button" parent="BoxContainer"]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("3_wwsa2")
+theme_override_font_sizes/font_size = 20
 text = "Opciones"
 
-[node name="Button3" type="Button" parent="BoxContainer"]
+[node name="Salir" type="Button" parent="BoxContainer"]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("3_wwsa2")
+theme_override_font_sizes/font_size = 20
 text = "Salir"
 
-[connection signal="pressed" from="BoxContainer/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="BoxContainer/Button2" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="BoxContainer/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="BoxContainer/Jugar" to="." method="_on_jugar_pressed"]
+[connection signal="pressed" from="BoxContainer/Jugar" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="BoxContainer/Opciones" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="BoxContainer/Opciones" to="." method="_on_opciones_pressed"]
+[connection signal="pressed" from="BoxContainer/Salir" to="." method="_on_salir_pressed"]
+[connection signal="pressed" from="BoxContainer/Salir" to="." method="_on_button_3_pressed"]

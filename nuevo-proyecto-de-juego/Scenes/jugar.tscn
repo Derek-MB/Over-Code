@@ -1,0 +1,261 @@
+[gd_scene load_steps=17 format=3 uid="uid://c3jtedf14ta24"]
+
+[ext_resource type="Script" uid="uid://biypg0i4bdfn2" path="res://Scripts/SlotsMenu.gd" id="1_6e1jg"]
+[ext_resource type="Texture2D" uid="uid://ddboffungdf1q" path="res://Sprites/sky.png" id="1_pf3b0"]
+[ext_resource type="Shader" uid="uid://dkanji6jcgpd0" path="res://Shaders/movimientoNubes.gdshader" id="2_5wcc6"]
+[ext_resource type="Texture2D" uid="uid://4olivh7yjon7" path="res://Sprites/Sprite-0003-pantalla de inmontañas.png" id="3_6e1jg"]
+[ext_resource type="Shader" path="res://Shaders/movimientoMontañas.gdshader" id="4_jukjc"]
+[ext_resource type="Texture2D" uid="uid://blgjlhftxngn5" path="res://Sprites/Sprite-000montañas2.png" id="5_oi125"]
+[ext_resource type="FontFile" uid="uid://baaqbul0ssy6w" path="res://Pixeled.ttf" id="7_jukjc"]
+[ext_resource type="Texture2D" uid="uid://b41hpwq7dta2u" path="res://Sprites/basurero.png" id="8_oi125"]
+[ext_resource type="Texture2D" uid="uid://b4s4tu7axpwvq" path="res://Sprites/Letrero.png" id="9_gvw04"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gvw04"]
+shader = ExtResource("2_5wcc6")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ku6up"]
+shader = ExtResource("4_jukjc")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3nt38"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oi125"]
+bg_color = Color(0.7738557, 7.70092e-07, 5.7756904e-07, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gvw04"]
+bg_color = Color(0.56609225, 1.3837591e-06, 3.3691526e-07, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ku6up"]
+bg_color = Color(0.016632833, 0.3695544, 0.5415818, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3f2pq"]
+bg_color = Color(0.045716114, 0.53670007, 0.77654856, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Jugar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6e1jg")
+
+[node name="fondo" type="TextureRect" parent="."]
+texture_repeat = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_pf3b0")
+
+[node name="nubes" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_gvw04")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_6e1jg")
+
+[node name="montañas" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_ku6up")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_oi125")
+
+[node name="BoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.056
+anchor_top = 0.832
+anchor_right = 0.2
+anchor_bottom = 0.9110001
+offset_left = -7.6800003
+offset_top = -0.13598633
+offset_bottom = 6.984009
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Atras" type="Button" parent="BoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("7_jukjc")
+theme_override_font_sizes/font_size = 20
+text = "Atras"
+
+[node name="VBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.455
+anchor_right = 0.5
+anchor_bottom = 0.455
+offset_left = -364.75
+offset_top = -165.84
+offset_right = 368.25
+offset_bottom = 166.16
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 120
+
+[node name="Slot 1" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_jukjc")
+text = "   Guardado 1   "
+
+[node name="Slot 2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_jukjc")
+text = "   Guardado 2   "
+
+[node name="Slot 3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_jukjc")
+text = "   Guardado 3   "
+
+[node name="Borrar" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.9110001
+anchor_top = 0.92100006
+anchor_right = 0.9110001
+anchor_bottom = 0.92100006
+offset_left = -62.08008
+offset_top = -99.120056
+offset_right = 68.91992
+offset_bottom = -3.1200562
+theme_override_styles/hover = SubResource("StyleBoxFlat_3nt38")
+icon = ExtResource("8_oi125")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="datos de borrado" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.91
+anchor_right = 0.5
+anchor_bottom = 0.91
+offset_left = -260.5
+offset_top = -46.200012
+offset_right = 260.5
+offset_bottom = -0.2000122
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("7_jukjc")
+text = "Seleccione los datos que desea eliminar"
+
+[node name="panelConfirmacion" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -437.0
+offset_top = -166.0
+offset_right = 437.0
+offset_bottom = 166.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="panelConfirmacion"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -464.25
+offset_top = -269.375
+offset_right = 464.25
+offset_bottom = 269.375
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_gvw04")
+
+[node name="Label" type="Label" parent="panelConfirmacion"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -308.0
+offset_top = -132.0
+offset_right = 308.0
+offset_bottom = -76.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_jukjc")
+theme_override_font_sizes/font_size = 20
+text = "¿Deseas borrar todo tu progreso?"
+
+[node name="si" type="Button" parent="panelConfirmacion"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.317
+anchor_top = 0.71800005
+anchor_right = 0.317
+anchor_bottom = 0.71800005
+offset_left = -60.058014
+offset_top = -39.376022
+offset_right = 59.941986
+offset_bottom = 39.623978
+theme_override_fonts/font = ExtResource("7_jukjc")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_oi125")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gvw04")
+text = "Si"
+
+[node name="no" type="Button" parent="panelConfirmacion"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.67600006
+anchor_top = 0.72
+anchor_right = 0.67600006
+anchor_bottom = 0.72
+offset_left = -59.824036
+offset_top = -40.04001
+offset_right = 60.175964
+offset_bottom = 39.95999
+theme_override_fonts/font = ExtResource("7_jukjc")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_ku6up")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3f2pq")
+text = "No"
+
+[connection signal="pressed" from="BoxContainer/Atras" to="." method="_on_atras_pressed"]
+[connection signal="pressed" from="VBoxContainer/Slot 1" to="." method="_on_slot_1_pressed"]
+[connection signal="pressed" from="VBoxContainer/Slot 2" to="." method="_on_slot_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/Slot 3" to="." method="_on_slot_3_pressed"]
+[connection signal="pressed" from="Borrar" to="." method="_on_borrar_pressed"]
+[connection signal="pressed" from="panelConfirmacion/si" to="." method="_on_si_pressed"]
+[connection signal="pressed" from="panelConfirmacion/no" to="." method="_on_no_pressed"]

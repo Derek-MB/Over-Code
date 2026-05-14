@@ -1,0 +1,77 @@
+[gd_scene load_steps=14 format=3 uid="uid://b4in7hqcvcxps"]
+
+[ext_resource type="Shader" uid="uid://btm04symgvqi5" path="res://Shaders/h_izquierda.gdshader" id="1_c87i8"]
+[ext_resource type="Texture2D" uid="uid://batprfylune2c" path="res://Sprites/h izquierda.png" id="2_lule8"]
+[ext_resource type="Shader" uid="uid://3m8cai3gbsqs" path="res://h_derecha.gdshader" id="3_mwe5e"]
+[ext_resource type="Texture2D" uid="uid://b3im7152n6rpx" path="res://Sprites/h derecha.png" id="4_kia4q"]
+[ext_resource type="Shader" uid="uid://bgepup1u4qy6p" path="res://Shaders/v_abajo.gdshader" id="5_7bj3r"]
+[ext_resource type="Texture2D" uid="uid://ddxpwlcrlx02o" path="res://Sprites/v abajo.png" id="6_0cikc"]
+[ext_resource type="Shader" uid="uid://cfg0cef1c0rfh" path="res://Shaders/v_arriba.gdshader" id="7_ieajj"]
+[ext_resource type="Texture2D" uid="uid://6nnfd7sigiot" path="res://Sprites/v arriba.png" id="8_ajppl"]
+[ext_resource type="Texture2D" uid="uid://cixxh2mxmh46v" path="res://Sprites/fondo cinematicas.png" id="9_wiljl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gymfq"]
+shader = ExtResource("1_c87i8")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d3doo"]
+shader = ExtResource("3_mwe5e")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a7bv8"]
+shader = ExtResource("5_7bj3r")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7n5ky"]
+shader = ExtResource("7_ieajj")
+
+[node name="Cinematicas" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Pico izquierda" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_gymfq")
+layout_mode = 0
+offset_left = 164.0
+offset_top = 72.0
+offset_right = 1116.0
+offset_bottom = 144.0
+texture = ExtResource("2_lule8")
+
+[node name="Pico derecha" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_d3doo")
+layout_mode = 0
+offset_left = 164.0
+offset_top = 408.0
+offset_right = 1116.0
+offset_bottom = 480.0
+texture = ExtResource("4_kia4q")
+
+[node name="Pico abajo" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_a7bv8")
+layout_mode = 0
+offset_left = 144.0
+offset_top = 72.0
+offset_right = 232.0
+offset_bottom = 480.0
+texture = ExtResource("6_0cikc")
+
+[node name="Pico arriba" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_7n5ky")
+layout_mode = 0
+offset_left = 1049.0
+offset_top = 72.0
+offset_right = 1137.0
+offset_bottom = 480.0
+texture = ExtResource("8_ajppl")
+
+[node name="Fondo" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("9_wiljl")

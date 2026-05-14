@@ -1,0 +1,122 @@
+[gd_scene load_steps=10 format=3 uid="uid://stpf3jswptob"]
+
+[ext_resource type="Script" uid="uid://bpjmy4vl4ydkb" path="res://Scripts/opciones.gd" id="1_8gyjq"]
+[ext_resource type="Texture2D" uid="uid://ddboffungdf1q" path="res://Sprites/sky.png" id="1_fkidl"]
+[ext_resource type="Shader" path="res://Shaders/movimientoNubes.gdshader" id="2_8gyjq"]
+[ext_resource type="Texture2D" uid="uid://4olivh7yjon7" path="res://Sprites/Sprite-0003-pantalla de inmontañas.png" id="3_7g26r"]
+[ext_resource type="Shader" path="res://Shaders/movimientoMontañas.gdshader" id="4_rl6jw"]
+[ext_resource type="Texture2D" uid="uid://blgjlhftxngn5" path="res://Sprites/Sprite-000montañas2.png" id="5_bcu2f"]
+[ext_resource type="FontFile" uid="uid://baaqbul0ssy6w" path="res://Pixeled.ttf" id="6_d2pr8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7gec4"]
+shader = ExtResource("2_8gyjq")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3qv40"]
+shader = ExtResource("4_rl6jw")
+
+[node name="Opciones" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8gyjq")
+
+[node name="fondo" type="TextureRect" parent="."]
+texture_repeat = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_fkidl")
+
+[node name="nubes" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_7gec4")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_7g26r")
+
+[node name="montañas" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_3qv40")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_bcu2f")
+
+[node name="BoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.056
+anchor_top = 0.84400004
+anchor_right = 0.194
+anchor_bottom = 0.9480001
+offset_left = -7.6800003
+offset_top = -8.776001
+offset_right = 7.6799927
+offset_bottom = -0.30407715
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Atras" type="Button" parent="BoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("6_d2pr8")
+theme_override_font_sizes/font_size = 20
+text = "Atras"
+
+[node name="BoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.49400002
+anchor_right = 0.5
+anchor_bottom = 0.49400002
+offset_left = -128.0
+offset_top = -192.112
+offset_right = 136.0
+offset_bottom = 191.888
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+
+[node name="VolumenGeneral" type="Button" parent="BoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("6_d2pr8")
+theme_override_font_sizes/font_size = 20
+text = "   Volumen General   "
+
+[node name="Musica" type="Button" parent="BoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("6_d2pr8")
+theme_override_font_sizes/font_size = 20
+text = "Musica"
+
+[node name="Efectos" type="Button" parent="BoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("6_d2pr8")
+theme_override_font_sizes/font_size = 20
+text = "Efectos"
+
+[node name="Idioma" type="Button" parent="BoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("6_d2pr8")
+theme_override_font_sizes/font_size = 20
+text = "Idioma"
+
+[connection signal="pressed" from="BoxContainer/Atras" to="." method="_on_atras_pressed"]
