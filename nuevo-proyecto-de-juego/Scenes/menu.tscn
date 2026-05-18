@@ -1,10 +1,10 @@
 [gd_scene load_steps=13 format=3 uid="uid://5or7blq2mubw"]
 
 [ext_resource type="Texture2D" uid="uid://ddboffungdf1q" path="res://Sprites/sky.png" id="2_wbdvm"]
-[ext_resource type="Shader" path="res://Shaders/movimientoNubes.gdshader" id="3_q3rjx"]
+[ext_resource type="Shader" uid="uid://dkanji6jcgpd0" path="res://Shaders/movimientoNubes.gdshader" id="3_q3rjx"]
 [ext_resource type="FontFile" uid="uid://baaqbul0ssy6w" path="res://Pixeled.ttf" id="3_wwsa2"]
 [ext_resource type="Texture2D" uid="uid://4olivh7yjon7" path="res://Sprites/Sprite-0003-pantalla de inmontañas.png" id="4_6swd7"]
-[ext_resource type="Shader" path="res://Shaders/movimientoMontañas.gdshader" id="5_7qvly"]
+[ext_resource type="Shader" uid="uid://b3f0mo46q6dp8" path="res://Shaders/movimientoMontañas.gdshader" id="5_7qvly"]
 [ext_resource type="Texture2D" uid="uid://blgjlhftxngn5" path="res://Sprites/Sprite-000montañas2.png" id="6_wbdvm"]
 [ext_resource type="Texture2D" uid="uid://dwhli5cfyqot0" path="res://Sprites/Sprite-0002- Titulo 2 OVER CODE-Recovered-1.png" id="7_6swd7"]
 [ext_resource type="Texture2D" uid="uid://c1firc88fpvua" path="res://Sprites/Sprite-0002- Titulo 2 OVER CODE-Recovered-2.png" id="8_7qvly"]
@@ -15,14 +15,14 @@ script/source = "extends Control
 
 
 func _on_jugar_pressed() -> void:
-	TransitionManager.cambiar_escena(\"res://Scenes/jugar.tscn\")
+    TransitionManager.cambiar_escena(\"res://Scenes/jugar.tscn\")
 
 func _on_opciones_pressed() -> void:
-	TransitionManager.cambiar_escena(\"res://Scenes/opciones.tscn\")
+    TransitionManager.cambiar_escena(\"res://Scenes/opciones.tscn\")
 
 
 func _on_salir_pressed() -> void:
-	get_tree().quit()
+    get_tree().quit()
 "
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g8i7c"]
@@ -127,9 +127,9 @@ theme_override_fonts/font = ExtResource("3_wwsa2")
 theme_override_font_sizes/font_size = 20
 text = "Salir"
 
-[connection signal="pressed" from="BoxContainer/Jugar" to="." method="_on_jugar_pressed"]
 [connection signal="pressed" from="BoxContainer/Jugar" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="BoxContainer/Opciones" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="BoxContainer/Jugar" to="." method="_on_jugar_pressed"]
 [connection signal="pressed" from="BoxContainer/Opciones" to="." method="_on_opciones_pressed"]
+[connection signal="pressed" from="BoxContainer/Opciones" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="BoxContainer/Salir" to="." method="_on_salir_pressed"]
 [connection signal="pressed" from="BoxContainer/Salir" to="." method="_on_button_3_pressed"]

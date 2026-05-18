@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://grb4co83pv7h"]
 
-[ext_resource type="Script" uid="uid://b7yv24uatj0j7" path="res://transition.gd" id="1_jnsx0"]
+[ext_resource type="Script" uid="uid://b7yv24uatj0j7" path="res://Scripts/transition.gd" id="1_jnsx0"]
 [ext_resource type="Shader" path="res://Shaders/transition.gdshader" id="2_ah04o"]
 
 [sub_resource type="Animation" id="Animation_ah04o"]
@@ -42,34 +42,6 @@ tracks/2/keys = {
 "values": [1.0]
 }
 
-[sub_resource type="Animation" id="Animation_vlteq"]
-resource_name = "Trancision"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.033333335, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:material:shader")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [ExtResource("2_ah04o"), ExtResource("2_ah04o")]
-}
-
 [sub_resource type="Animation" id="Animation_jnsx0"]
 resource_name = "fade_in"
 length = 0.5
@@ -96,6 +68,34 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [1.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_vlteq"]
+resource_name = "Trancision"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:material:shader")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("2_ah04o"), ExtResource("2_ah04o")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nshyj"]

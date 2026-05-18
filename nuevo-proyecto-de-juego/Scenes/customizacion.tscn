@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://cr8fkum23ypfi"]
 
 [ext_resource type="Shader" path="res://Shaders/code_Simbols.gdshader" id="1_ndr5v"]
-[ext_resource type="Script" uid="uid://buis2f3oepssq" path="res://Scenes/customizacion.gd" id="1_ou8m5"]
+[ext_resource type="Script" uid="uid://buis2f3oepssq" path="res://Scripts/customizacion.gd" id="1_ou8m5"]
 [ext_resource type="Texture2D" uid="uid://y4wf2ahlrb8h" path="res://Sprites/Seleccion personaje bg.png" id="2_ou8m5"]
 [ext_resource type="FontFile" uid="uid://baaqbul0ssy6w" path="res://Pixeled.ttf" id="3_4nnip"]
 [ext_resource type="Texture2D" uid="uid://b4s4tu7axpwvq" path="res://Sprites/Letrero.png" id="5_4nnip"]
@@ -93,7 +93,7 @@ anchor_right = 0.38700002
 anchor_bottom = 0.878
 offset_left = 8.639999
 offset_top = 34.15999
-offset_right = 56.639954
+offset_right = 24.639954
 offset_bottom = 35.09485
 
 [node name="LineEdit" type="LineEdit" parent="."]

@@ -1,14 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://c7bxpwjftifjk"]
+[gd_scene load_steps=12 format=3 uid="uid://x3jsepdww2th"]
 
-[ext_resource type="Shader" path="res://Shaders/code_Simbols.gdshader" id="1_mgwam"]
-[ext_resource type="Script" uid="uid://blkw75w8nee8t" path="res://seleccion_de_personaje.gd" id="1_v2pba"]
-[ext_resource type="Texture2D" uid="uid://y4wf2ahlrb8h" path="res://Sprites/Seleccion personaje bg.png" id="2_ik21r"]
-[ext_resource type="Texture2D" uid="uid://docv7hrnchnsi" path="res://Sprites/Boy.png" id="3_mu8tk"]
-[ext_resource type="Texture2D" uid="uid://b8in3b64p8lxs" path="res://Sprites/Girl.png" id="4_u4ppm"]
-[ext_resource type="FontFile" uid="uid://baaqbul0ssy6w" path="res://Pixeled.ttf" id="5_u4ppm"]
+[ext_resource type="Script" uid="uid://blkw75w8nee8t" path="res://Scripts/seleccion_de_personaje.gd" id="1_fm37h"]
+[ext_resource type="Shader" path="res://Shaders/code_Simbols.gdshader" id="2_d1r17"]
+[ext_resource type="Texture2D" uid="uid://y4wf2ahlrb8h" path="res://Sprites/Seleccion personaje bg.png" id="3_0ll8g"]
+[ext_resource type="FontFile" uid="uid://baaqbul0ssy6w" path="res://Pixeled.ttf" id="4_83l8y"]
+[ext_resource type="Texture2D" uid="uid://docv7hrnchnsi" path="res://Sprites/Boy.png" id="5_dh82q"]
+[ext_resource type="Texture2D" uid="uid://b8in3b64p8lxs" path="res://Sprites/Girl.png" id="6_wviq3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mu8tk"]
-shader = ExtResource("1_mgwam")
+shader = ExtResource("2_d1r17")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u4ppm"]
 bg_color = Color(0.20392157, 0.2509804, 0.43529412, 0.56078434)
@@ -31,16 +31,24 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qsalx"]
+bg_color = Color(0.26666668, 0.3254902, 0.54509807, 0.56078434)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
 [node name="Seleccion de personaje" type="Control"]
 clip_contents = true
 layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = 16.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
-script = ExtResource("1_v2pba")
+script = ExtResource("1_fm37h")
 
 [node name="Pattern" type="TextureRect" parent="."]
 texture_repeat = 2
@@ -56,7 +64,7 @@ offset_bottom = 561.71423
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.56, 0.56)
-texture = ExtResource("2_ik21r")
+texture = ExtResource("3_0ll8g")
 stretch_mode = 1
 
 [node name="Titulo" type="VBoxContainer" parent="."]
@@ -74,7 +82,7 @@ grow_horizontal = 2
 
 [node name="SeleccionPersonaje" type="Label" parent="Titulo"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("5_u4ppm")
+theme_override_fonts/font = ExtResource("4_83l8y")
 theme_override_font_sizes/font_size = 25
 text = "Selecciona tu personaje"
 horizontal_alignment = 1
@@ -102,7 +110,7 @@ custom_minimum_size = Vector2(300, 450)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_u4ppm")
 theme_override_styles/hover = SubResource("StyleBoxFlat_le14f")
-icon = ExtResource("3_mu8tk")
+icon = ExtResource("5_dh82q")
 icon_alignment = 1
 expand_icon = true
 
@@ -112,7 +120,7 @@ offset_left = 71.0
 offset_top = 467.0
 offset_right = 226.0
 offset_bottom = 537.0
-theme_override_fonts/font = ExtResource("5_u4ppm")
+theme_override_fonts/font = ExtResource("4_83l8y")
 theme_override_font_sizes/font_size = 25
 text = "Chico"
 horizontal_alignment = 1
@@ -122,7 +130,8 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(300, 300)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_v2pba")
-icon = ExtResource("4_u4ppm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qsalx")
+icon = ExtResource("6_wviq3")
 icon_alignment = 1
 expand_icon = true
 
@@ -132,7 +141,7 @@ offset_left = 85.0
 offset_top = 467.0
 offset_right = 210.0
 offset_bottom = 537.0
-theme_override_fonts/font = ExtResource("5_u4ppm")
+theme_override_fonts/font = ExtResource("4_83l8y")
 theme_override_font_sizes/font_size = 25
 text = "Chica"
 horizontal_alignment = 1

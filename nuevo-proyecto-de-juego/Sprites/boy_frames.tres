@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://t7iye4p5rs18"]
+
+[ext_resource type="Texture2D" uid="uid://djmhns20ksomf" path="res://Sprites/boyMap_idle.png" id="1_onuoq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0y4e4"]
+atlas = ExtResource("1_onuoq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a36m1"]
+atlas = ExtResource("1_onuoq")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53ilg"]
+atlas = ExtResource("1_onuoq")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ls73i"]
+atlas = ExtResource("1_onuoq")
+region = Rect2(96, 0, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0y4e4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a36m1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53ilg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ls73i")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]

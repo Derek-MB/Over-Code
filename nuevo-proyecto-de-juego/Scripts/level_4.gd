@@ -4,5 +4,5 @@ extends Node2D
 @export var level_id : int
 
 func enter_level():
-	get_tree().change_scene_to_file(level_scene) # el change scene to file, ya cuando allas creado el nodo del nivel poner la direccion del mismo ejem: res://levels/level1.tscn
-	
+    get_tree().change_scene_to_file(level_scene) # el change scene to file, ya cuando allas creado el nodo del nivel poner la direccion del mismo ejem: res://levels/level1.tscn
+    
