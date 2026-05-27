@@ -1,13 +1,19 @@
-[gd_scene load_steps=67 format=3 uid="uid://c8xdfgfadkqvv"]
+[gd_scene load_steps=80 format=3 uid="uid://c8xdfgfadkqvv"]
 
 [ext_resource type="Texture2D" uid="uid://bpgjolounvrv1" path="res://Sprites/mapa.png" id="1_goa42"]
+[ext_resource type="Script" uid="uid://bac3vreya4lye" path="res://Scripts/mapa.gd" id="1_v43pt"]
 [ext_resource type="Texture2D" uid="uid://c2od0dqr3t46a" path="res://Sprites/2336803927.png" id="2_u55js"]
 [ext_resource type="Shader" uid="uid://dkanji6jcgpd0" path="res://Shaders/movimientoNubes.gdshader" id="2_vm3su"]
 [ext_resource type="Texture2D" uid="uid://4olivh7yjon7" path="res://Sprites/Sprite-0003-pantalla de inmontañas.png" id="3_u55js"]
 [ext_resource type="Texture2D" uid="uid://dtu6ylnfitjbk" path="res://Sprites/botonNivel-.png" id="4_kkfvo"]
 [ext_resource type="Texture2D" uid="uid://bgvd4qfhecjdh" path="res://Sprites/botonNivel+.png" id="5_kbneb"]
+[ext_resource type="Script" uid="uid://cvwt8c2nrbhmm" path="res://Scripts/entrar_Nivel1.gd" id="5_lkwsl"]
 [ext_resource type="Script" uid="uid://bcvkjfou1uf8w" path="res://Scripts/personaje_Mapa.gd" id="7_ykhg3"]
-[ext_resource type="SpriteFrames" uid="uid://t7iye4p5rs18" path="res://Sprites/boy_frames.tres" id="8_v1efw"]
+[ext_resource type="FontFile" uid="uid://baaqbul0ssy6w" path="res://Pixeled.ttf" id="7_yq38d"]
+[ext_resource type="SpriteFrames" uid="uid://dhej5nryb2i2v" path="res://Sprites/girl_frames.tres" id="10_yq38d"]
+[ext_resource type="Texture2D" uid="uid://cweuufdiqbo4b" path="res://Sprites/Cabeza robot1.png" id="11_1lxf8"]
+[ext_resource type="Texture2D" uid="uid://bjulsahabrt5s" path="res://Sprites/Cabeza robot2.png" id="11_nl0av"]
+[ext_resource type="Texture2D" uid="uid://duy8mxoftu0lu" path="res://Sprites/menu Hamburguer.png" id="14_604li"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p41nb"]
 atlas = ExtResource("1_goa42")
@@ -411,10 +417,78 @@ animations = [{
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kbneb"]
 shader = ExtResource("2_vm3su")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1lxf8"]
+bg_color = Color(0, 0, 0, 0.6509804)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_kkfvo"]
 radius = 18.0
 
+[sub_resource type="Animation" id="Animation_nl0av"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1lxf8"]
+resource_name = "hide"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_yq38d"]
+resource_name = "show"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kconx"]
+_data = {
+&"RESET": SubResource("Animation_nl0av"),
+&"hide": SubResource("Animation_1lxf8"),
+&"show": SubResource("Animation_yq38d")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lkwsl"]
+radius = 14.0
+height = 32.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aj1jk"]
+
 [node name="Mapa" type="Node2D"]
+script = ExtResource("1_v43pt")
 
 [node name="Mapa" type="AnimatedSprite2D" parent="."]
 position = Vector2(637.99994, 367)
@@ -423,6 +497,7 @@ sprite_frames = SubResource("SpriteFrames_kkfvo")
 animation = &"new_animation"
 autoplay = "new_animation"
 frame_progress = 0.45586658
+metadata/_edit_lock_ = true
 
 [node name="Planeta Tierra" type="AnimatedSprite2D" parent="."]
 position = Vector2(640, 136)
@@ -448,20 +523,40 @@ offset_bottom = 578.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_u55js")
+metadata/_edit_lock_ = true
 
 [node name="Nivel1" type="Node" parent="."]
 
 [node name="Area2D" type="Area2D" parent="Nivel1"]
 position = Vector2(-88, 88)
+script = ExtResource("5_lkwsl")
 
 [node name="Sprite2D" type="Sprite2D" parent="Nivel1/Area2D"]
 position = Vector2(698.99994, 585)
 scale = Vector2(2.281249, 1.7343761)
 texture = ExtResource("5_kbneb")
 
+[node name="Label" type="Label" parent="Nivel1/Area2D"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 635.0
+offset_top = 470.0
+offset_right = 765.0
+offset_bottom = 529.0
+theme_override_fonts/font = ExtResource("7_yq38d")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_1lxf8")
+text = " Tutorial
+ Enter/Espacio "
+horizontal_alignment = 1
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Nivel1/Area2D"]
 position = Vector2(699, 584)
 shape = SubResource("CircleShape2D_kkfvo")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Nivel1/Area2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_kconx")
+}
 
 [node name="Nivel2" type="Node" parent="."]
 
@@ -472,6 +567,11 @@ position = Vector2(-88, 88)
 position = Vector2(1202, 442)
 scale = Vector2(2.281249, 1.7343761)
 texture = ExtResource("4_kkfvo")
+
+[node name="Label" type="Label" parent="Nivel2/Area2D"]
+modulate = Color(1, 1, 1, 0)
+offset_right = 40.0
+offset_bottom = 23.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Nivel2/Area2D"]
 position = Vector2(1202.0001, 440.99994)
@@ -488,6 +588,10 @@ position = Vector2(701.99994, 584)
 scale = Vector2(2.281249, 1.7343761)
 texture = ExtResource("4_kkfvo")
 
+[node name="Label" type="Label" parent="Nivel3/Area2D"]
+offset_right = 40.0
+offset_bottom = 23.0
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Nivel3/Area2D"]
 position = Vector2(702, 583)
 shape = SubResource("CircleShape2D_kkfvo")
@@ -501,6 +605,10 @@ position = Vector2(-504, -280)
 position = Vector2(702, 590)
 scale = Vector2(2.281249, 1.7343761)
 texture = ExtResource("4_kkfvo")
+
+[node name="Label" type="Label" parent="Nivel4/Area2D"]
+offset_right = 40.0
+offset_bottom = 23.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Nivel4/Area2D"]
 position = Vector2(702, 588)
@@ -516,17 +624,16 @@ position = Vector2(701.99994, 584)
 scale = Vector2(2.281249, 1.7343761)
 texture = ExtResource("4_kkfvo")
 
+[node name="Label" type="Label" parent="Nivel5/Area2D"]
+modulate = Color(1, 1, 1, 0)
+offset_right = 40.0
+offset_bottom = 23.0
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Nivel5/Area2D"]
 position = Vector2(702, 583)
 shape = SubResource("CircleShape2D_kkfvo")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Control" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 z_index = 1
@@ -534,10 +641,70 @@ script = ExtResource("7_ykhg3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 texture_repeat = 2
-position = Vector2(672, 616)
+position = Vector2(612, 676)
 scale = Vector2(2.25, 2.25)
-sprite_frames = ExtResource("8_v1efw")
-animation = &"idle"
+sprite_frames = ExtResource("10_yq38d")
+animation = &"walk_up"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(612, 692)
+shape = SubResource("CapsuleShape2D_lkwsl")
+
+[node name="Montaña1" type="StaticBody2D" parent="."]
+position = Vector2(640, 600)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Montaña1"]
+position = Vector2(0, -4)
+polygon = PackedVector2Array(0, 0, 0, 8, -128, 24, -256, 88, -256, 112, 232, 112, 176, 40, 96, 16, 56, 0, 0, 4, 8, -16, 0, -16, 0, 0, -8, -16, 0, -24, 8, -24, 16, -16, 8, -4, 64, -8, 104, 8, 192, 40, 240, 112, 240, 120, -264, 120, -264, 80, -128, 16, -8, 0)
+
+[node name="Montaña2" type="StaticBody2D" parent="."]
+position = Vector2(1280, 1200)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Montaña2"]
+position = Vector2(-483.11133, -681)
+scale = Vector2(0.23570809, 1)
+polygon = PackedVector2Array(13.199951, 1, 81.08032, -38.99997, 216.84155, -62.99997, 624.125, -86.99997, 1302.9307, -102.99997, 2151.438, -94.99997, 2321.1392, -86.99997, 2321.1392, 113, 1812.0352, 137, 861.70703, 89, 624.125, 89, 556.2444, 97, 386.54297, 81, 352.60278, 65, 182.90137, 65, -20.740479, 57, -54.680664, 25, 13.199951, 9, -54.680664, 9, -88.62109, 33, -54.680664, 65, 182.90137, 73, 352.60278, 73, 352.60278, 89, 556.2444, 105, 861.70703, 105, 1302.9307, 129, 1812.0352, 145, 2355.0796, 121, 2355.0796, -94.99997, 2151.438, -102.99997, 1302.9307, -110.99997, 624.125, -94.99997, 216.84155, -70.99997, 47.140137, -46.99997, -20.740479, 1)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1240.0
+offset_top = 32.0
+offset_right = 1336.0
+offset_bottom = 128.0
+
+[node name="Chatbot" type="TextureButton" parent="Control"]
+z_index = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.16700001
+anchor_top = 0.16700001
+anchor_right = 1.0
+anchor_bottom = 1.0830001
+offset_left = 0.032001495
+offset_top = -16.032001
+offset_bottom = 6.5319977
+texture_normal = ExtResource("11_1lxf8")
+texture_hover = ExtResource("11_nl0av")
+stretch_mode = 6
+
+[node name="Menu_Hamburguesa" type="Button" parent="Control"]
+z_index = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -12.000001
+anchor_right = -12.000001
+offset_left = -143.99988
+offset_top = 8.0
+offset_right = -23.999878
+offset_bottom = 104.0
+theme_override_styles/hover = SubResource("StyleBoxFlat_aj1jk")
+icon = ExtResource("14_604li")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="body_entered" from="Nivel1/Area2D" to="Nivel1/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Nivel1/Area2D" to="Nivel1/Area2D" method="_on_body_exited"]
+[connection signal="pressed" from="Control/Chatbot" to="." method="_on_chatbot_pressed"]

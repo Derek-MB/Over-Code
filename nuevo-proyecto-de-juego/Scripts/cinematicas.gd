@@ -47,7 +47,7 @@ func mostrar_texto(nuevo_texto):
 
     escribiendo = false
 
-func _input(event):
+func _input(event): 
 
     if event.is_pressed() and event is InputEventKey:
 

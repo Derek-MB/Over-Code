@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://x3jsepdww2th"]
 
 [ext_resource type="Script" uid="uid://blkw75w8nee8t" path="res://Scripts/seleccion_de_personaje.gd" id="1_fm37h"]
-[ext_resource type="Shader" path="res://Shaders/code_Simbols.gdshader" id="2_d1r17"]
+[ext_resource type="Shader" uid="uid://srx1g0mexdd" path="res://Shaders/code_Simbols.gdshader" id="2_d1r17"]
 [ext_resource type="Texture2D" uid="uid://y4wf2ahlrb8h" path="res://Sprites/Seleccion personaje bg.png" id="3_0ll8g"]
 [ext_resource type="FontFile" uid="uid://baaqbul0ssy6w" path="res://Pixeled.ttf" id="4_83l8y"]
 [ext_resource type="Texture2D" uid="uid://docv7hrnchnsi" path="res://Sprites/Boy.png" id="5_dh82q"]

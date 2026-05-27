@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ddboffungdf1q" path="res://Sprites/sky.png" id="1_pf3b0"]
 [ext_resource type="Shader" uid="uid://dkanji6jcgpd0" path="res://Shaders/movimientoNubes.gdshader" id="2_5wcc6"]
 [ext_resource type="Texture2D" uid="uid://4olivh7yjon7" path="res://Sprites/Sprite-0003-pantalla de inmontañas.png" id="3_6e1jg"]
-[ext_resource type="Shader" path="res://Shaders/movimientoMontañas.gdshader" id="4_jukjc"]
+[ext_resource type="Shader" uid="uid://b3f0mo46q6dp8" path="res://Shaders/movimientoMontañas.gdshader" id="4_jukjc"]
 [ext_resource type="Texture2D" uid="uid://blgjlhftxngn5" path="res://Sprites/Sprite-000montañas2.png" id="5_oi125"]
 [ext_resource type="FontFile" uid="uid://baaqbul0ssy6w" path="res://Pixeled.ttf" id="7_jukjc"]
 [ext_resource type="Texture2D" uid="uid://b41hpwq7dta2u" path="res://Sprites/basurero.png" id="8_oi125"]
@@ -17,6 +17,8 @@ shader = ExtResource("2_5wcc6")
 shader = ExtResource("4_jukjc")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3nt38"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oi125"]
 bg_color = Color(0.7738557, 7.70092e-07, 5.7756904e-07, 1)

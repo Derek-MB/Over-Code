@@ -6,13 +6,18 @@ extends CharacterBody2D
 
 var boy_frames = preload("res://Sprites/boy_frames.tres")
 var girl_frames = preload("res://Sprites/girl_frames.tres")
+
+var last_direction = Vector2.DOWN
+
+
 func _ready():
 
     if Global.player_character == "boy":
         sprite.sprite_frames = boy_frames
     else:
         sprite.sprite_frames = girl_frames
-        
+
+
 func _physics_process(_delta):
 
     var direction = Vector2.ZERO
@@ -31,20 +36,69 @@ func _physics_process(_delta):
 
 
     velocity = direction.normalized() * speed
+
     move_and_slide()
 
 
-    # ANIMACIONES
+    # GUARDAR ÚLTIMA DIRECCIÓN
     if direction != Vector2.ZERO:
+        last_direction = direction
 
-        if Global.player_character == "boy":
-            sprite.play("walk")
-        else:
-            sprite.play("walk")
+
+    # ANIMACIONES
+    if direction == Vector2.ZERO:
+
+        # IDLE DERECHA/IZQUIERDA
+        if abs(last_direction.x) > abs(last_direction.y):
+
+            if sprite.animation != "idle_side":
+                sprite.play("idle_side")
+
+        # IDLE ABAJO
+        elif last_direction.y > 0:
+
+            if sprite.animation != "idle_down":
+                sprite.play("idle")
+
+        # IDLE ARRIBA
+        elif last_direction.y < 0:
+
+            if sprite.animation != "idle_up":
+                sprite.play("idle")
 
     else:
 
-        if Global.player_character == "girl":
-            sprite.play("idle")
-        else:
-            sprite.play("idle")
+        # DERECHA
+        if direction.x > 0:
+
+            sprite.flip_h = false
+
+            if sprite.animation != "walk_side":
+                sprite.play("walk_side")
+
+
+        # IZQUIERDA
+        elif direction.x < 0:
+
+            sprite.flip_h = true
+
+            if sprite.animation != "walk_side":
+                sprite.play("walk_side")
+
+
+        # ABAJO
+        elif direction.y > 0:
+
+            sprite.flip_h = false
+
+            if sprite.animation != "walk_down":
+                sprite.play("walk_down")
+
+
+        # ARRIBA
+        elif direction.y < 0:
+
+            sprite.flip_h = false
+
+            if sprite.animation != "walk_up":
+                sprite.play("walk_up")

@@ -1,0 +1,193 @@
+{
+  "html": {
+    "description": "HTML se usa para estructurar páginas web.",
+    "example": "<h1>Hola Mundo</h1>",
+    "tips": "Usa etiquetas semánticas como header, section y footer."
+  },
+
+  "css": {
+    "description": "CSS sirve para dar estilos y diseño visual.",
+    "example": "body { background: black; color: white; }",
+    "tips": "Usa clases reutilizables para mantener tu código organizado."
+  },
+
+  "javascript": {
+    "description": "JavaScript agrega lógica e interactividad a las páginas web.",
+    "example": "console.log('Hola');",
+    "tips": "Divide tu código en funciones pequeñas."
+  },
+
+  "python": {
+    "description": "Python es un lenguaje simple y poderoso.",
+    "example": "print('Hola Mundo')",
+    "tips": "Usa nombres descriptivos para variables y funciones."
+  },
+	
+  "pagina": {
+  "description": "HTML y CSS se usan para crear páginas web.",
+  "example": "<h1>Mi página</h1>",
+  "tips": "Combina HTML, CSS y JavaScript."
+},
+
+  "web": {
+  "description": "Las tecnologías web incluyen HTML, CSS y JavaScript.",
+  "example": "<p>Hola</p>",
+  "tips": "Aprende primero HTML."
+},
+
+  "variable": {
+    "description": "Una variable almacena información.",
+    "example": "let nombre = 'Juan';",
+    "tips": "Usa nombres claros y fáciles de entender."
+  },
+
+  "funcion": {
+    "description": "Las funciones permiten reutilizar código.",
+    "example": "function saludar(){ return 'Hola'; }",
+    "tips": "Cada función debe encargarse de una sola tarea."
+  },
+
+  "if": {
+    "description": "if sirve para tomar decisiones.",
+    "example": "if(x > 5){ console.log(x); }",
+    "tips": "Evita demasiados if anidados."
+  },
+
+  "else": {
+    "description": "else ejecuta código cuando if no se cumple.",
+    "example": "if(x > 5){} else {}",
+    "tips": "Mantén las condiciones simples."
+  },
+
+  "for": {
+    "description": "for repite instrucciones varias veces.",
+    "example": "for(let i=0; i<5; i++){}",
+    "tips": "Cuidado con los loops infinitos."
+  },
+
+  "while": {
+    "description": "while ejecuta código mientras una condición sea verdadera.",
+    "example": "while(x < 10){ x++; }",
+    "tips": "Asegúrate de actualizar la condición."
+  },
+
+  "array": {
+    "description": "Un array almacena múltiples valores.",
+    "example": "let frutas = ['manzana', 'pera'];",
+    "tips": "Usa arrays para manejar listas."
+  },
+
+  "objeto": {
+    "description": "Los objetos agrupan información relacionada.",
+    "example": "let persona = {nombre:'Juan', edad:20};",
+    "tips": "Usa objetos para representar entidades."
+  },
+
+  "clase": {
+    "description": "Una clase funciona como plantilla para crear objetos.",
+    "example": "class Persona { constructor(nombre){} }",
+    "tips": "Las clases ayudan a organizar proyectos grandes."
+  },
+
+  "loop": {
+    "description": "Los loops automatizan tareas repetitivas.",
+    "example": "for(let i=0; i<10; i++){}",
+    "tips": "Usa loops solo cuando sean necesarios."
+  },
+
+  "operadores": {
+    "description": "Los operadores permiten hacer cálculos y comparaciones.",
+    "example": "5 + 5",
+    "tips": "Aprende primero +, -, *, / y %."
+  },
+
+  "suma": {
+    "description": "La suma agrega valores.",
+    "example": "5 + 5",
+    "tips": "La suma es uno de los operadores básicos."
+  },
+
+  "resta": {
+    "description": "La resta disminuye valores.",
+    "example": "10 - 5",
+    "tips": "Verifica siempre el orden de los números."
+  },
+
+  "multiplicacion": {
+    "description": "La multiplicación repite una suma varias veces.",
+    "example": "5 * 5",
+    "tips": "Usa multiplicación para cálculos repetitivos."
+  },
+
+  "division": {
+    "description": "La división reparte un valor.",
+    "example": "10 / 2",
+    "tips": "Evita dividir entre cero."
+  },
+
+  "boolean": {
+    "description": "Un boolean solo puede ser verdadero o falso.",
+    "example": "true",
+    "tips": "Los booleanos son fundamentales en condiciones."
+  },
+
+  "string": {
+    "description": "Un string almacena texto.",
+    "example": "'Hola Mundo'",
+    "tips": "Usa comillas para definir texto."
+  },
+
+  "integer": {
+    "description": "Integer representa números enteros.",
+    "example": "10",
+    "tips": "No uses decimales en integers."
+  },
+
+  "float": {
+    "description": "Float representa números decimales.",
+    "example": "3.14",
+    "tips": "Usa float cuando necesites precisión decimal."
+  },
+
+  "comentario": {
+    "description": "Los comentarios ayudan a documentar el código.",
+    "example": "// Esto es un comentario",
+    "tips": "Comenta solo lo necesario."
+  },
+
+  "debug": {
+    "description": "Debug es el proceso de encontrar errores.",
+    "example": "console.log(variable)",
+    "tips": "Divide el problema en partes pequeñas."
+  },
+
+  "error": {
+    "description": "Los errores ocurren cuando el código falla.",
+    "example": "SyntaxError",
+    "tips": "Lee cuidadosamente los mensajes de error."
+  },
+
+  "dom": {
+    "description": "El DOM representa la estructura de una página web.",
+    "example": "document.getElementById('titulo')",
+    "tips": "Manipula el DOM con cuidado para evitar lentitud."
+  },
+
+  "evento": {
+    "description": "Los eventos detectan acciones del usuario.",
+    "example": "button.addEventListener('click', funcion)",
+    "tips": "Usa eventos para crear interactividad."
+  },
+
+  "flexbox": {
+    "description": "Flexbox ayuda a organizar elementos en CSS.",
+    "example": "display: flex;",
+    "tips": "Flexbox simplifica el alineamiento."
+  },
+
+  "grid": {
+    "description": "CSS Grid crea diseños complejos.",
+    "example": "display: grid;",
+    "tips": "Grid es ideal para layouts grandes."
+  }
+}
