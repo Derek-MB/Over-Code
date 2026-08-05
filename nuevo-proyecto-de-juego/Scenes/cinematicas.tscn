@@ -2,15 +2,15 @@
 
 [ext_resource type="Shader" uid="uid://btm04symgvqi5" path="res://Shaders/h_izquierda.gdshader" id="1_c87i8"]
 [ext_resource type="Script" uid="uid://cx560rm8cu73x" path="res://Scripts/cinematicas.gd" id="1_mwe5e"]
-[ext_resource type="Texture2D" uid="uid://batprfylune2c" path="res://Sprites/h izquierda.png" id="2_lule8"]
+[ext_resource type="Texture2D" uid="uid://batprfylune2c" path="res://Assets/Art/Cinematics/transition_left.png" id="2_lule8"]
 [ext_resource type="Shader" uid="uid://3m8cai3gbsqs" path="res://Shaders/h_derecha.gdshader" id="3_mwe5e"]
-[ext_resource type="Texture2D" uid="uid://b3im7152n6rpx" path="res://Sprites/h derecha.png" id="4_kia4q"]
+[ext_resource type="Texture2D" uid="uid://b3im7152n6rpx" path="res://Assets/Art/Cinematics/transition_right.png" id="4_kia4q"]
 [ext_resource type="Shader" uid="uid://bgepup1u4qy6p" path="res://Shaders/v_abajo.gdshader" id="5_7bj3r"]
-[ext_resource type="Texture2D" uid="uid://ddxpwlcrlx02o" path="res://Sprites/v abajo.png" id="6_0cikc"]
+[ext_resource type="Texture2D" uid="uid://ddxpwlcrlx02o" path="res://Assets/Art/Cinematics/transition_down.png" id="6_0cikc"]
 [ext_resource type="Shader" uid="uid://cfg0cef1c0rfh" path="res://Shaders/v_arriba.gdshader" id="7_ieajj"]
-[ext_resource type="Texture2D" uid="uid://6nnfd7sigiot" path="res://Sprites/v arriba.png" id="8_ajppl"]
-[ext_resource type="Texture2D" uid="uid://cixxh2mxmh46v" path="res://Sprites/fondo cinematicas.png" id="9_wiljl"]
-[ext_resource type="FontFile" uid="uid://baaqbul0ssy6w" path="res://Pixeled.ttf" id="11_kia4q"]
+[ext_resource type="Texture2D" uid="uid://6nnfd7sigiot" path="res://Assets/Art/Cinematics/transition_up.png" id="8_ajppl"]
+[ext_resource type="Texture2D" uid="uid://cixxh2mxmh46v" path="res://Assets/Art/Cinematics/cinematics_background.png" id="9_wiljl"]
+[ext_resource type="FontFile" uid="uid://baaqbul0ssy6w" path="res://Assets/Fonts/Pixeled.ttf" id="11_kia4q"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gymfq"]
 shader = ExtResource("1_c87i8")

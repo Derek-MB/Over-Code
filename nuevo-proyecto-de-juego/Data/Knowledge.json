@@ -1,193 +1,320 @@
 {
+  "java": {
+    "aliases": ["lenguaje java", "java vs javascript", "diferencia java javascript"],
+    "description": "Java y JavaScript no son lo mismo. Java es un lenguaje usado mucho en aplicaciones empresariales, Android y sistemas grandes. JavaScript es el lenguaje principal para dar interactividad a paginas web. En este juego, si preguntas por Java normalmente te conviene estudiar JavaScript, porque es una de las 4 tecnologias del proyecto.",
+    "example": "JavaScript: console.log('Hola');\nJava: System.out.println(\"Hola\");",
+    "tips": "Si tu duda es de paginas web, escribe JavaScript o JS. Si tu duda es de aplicaciones Android o backend con clases Java, entonces si estas hablando de Java."
+  },
   "html": {
-    "description": "HTML se usa para estructurar páginas web.",
-    "example": "<h1>Hola Mundo</h1>",
-    "tips": "Usa etiquetas semánticas como header, section y footer."
+    "aliases": ["hypertext markup language", "etiquetas", "estructura web", "maquetacion html", "documento html"],
+    "description": "HTML es el lenguaje de marcado que define la estructura de una pagina web. No se usa para programar logica, sino para indicar que elementos existen: titulos, parrafos, imagenes, enlaces, formularios, listas, tablas y secciones.",
+    "example": "<!DOCTYPE html>\n<html>\n  <head><title>Mi pagina</title></head>\n  <body><h1>Hola Mundo</h1></body>\n</html>",
+    "tips": "Piensa en HTML como el esqueleto de la pagina. Usa etiquetas semanticas como header, nav, main, section, article y footer para que el contenido sea mas claro."
   },
-
   "css": {
-    "description": "CSS sirve para dar estilos y diseño visual.",
-    "example": "body { background: black; color: white; }",
-    "tips": "Usa clases reutilizables para mantener tu código organizado."
+    "aliases": ["estilos", "diseno web", "hojas de estilo", "style", "responsive", "colores"],
+    "description": "CSS es el lenguaje que controla la apariencia visual de una pagina web. Sirve para colores, tamanos, fuentes, margenes, animaciones, posiciones, disenos adaptables y distribucion de elementos.",
+    "example": "body {\n  background: #101820;\n  color: white;\n  font-family: Arial, sans-serif;\n}",
+    "tips": "Organiza tus estilos con clases reutilizables. Evita repetir muchas veces las mismas reglas y usa Flexbox o Grid para acomodar elementos."
   },
-
   "javascript": {
-    "description": "JavaScript agrega lógica e interactividad a las páginas web.",
-    "example": "console.log('Hola');",
-    "tips": "Divide tu código en funciones pequeñas."
+    "aliases": ["js", "ecmascript", "script", "interactividad", "logica web", "programacion web"],
+    "description": "JavaScript es un lenguaje de programacion que agrega logica e interactividad a las paginas web. Puede reaccionar a clicks, validar formularios, modificar HTML, consumir APIs, crear juegos y trabajar tanto en frontend como en backend con Node.js.",
+    "example": "const boton = document.querySelector('#jugar');\nboton.addEventListener('click', () => {\n  console.log('Comienza el juego');\n});",
+    "tips": "Aprende variables, funciones, condiciones, arrays, objetos, eventos y DOM. Con eso ya puedes crear interfaces web interactivas."
   },
-
   "python": {
-    "description": "Python es un lenguaje simple y poderoso.",
-    "example": "print('Hola Mundo')",
-    "tips": "Usa nombres descriptivos para variables y funciones."
+    "aliases": ["py", "lenguaje python", "programar en python", "backend python"],
+    "description": "Python es un lenguaje de programacion claro y poderoso. Se usa en automatizacion, ciencia de datos, inteligencia artificial, desarrollo web, scripts, juegos simples y aprendizaje de programacion.",
+    "example": "nombre = 'Ana'\nprint('Hola', nombre)",
+    "tips": "Python se lee casi como pseudocodigo, pero debes cuidar la indentacion. Los espacios al inicio de una linea indican bloques de codigo."
   },
-	
   "pagina": {
-  "description": "HTML y CSS se usan para crear páginas web.",
-  "example": "<h1>Mi página</h1>",
-  "tips": "Combina HTML, CSS y JavaScript."
-},
-
-  "web": {
-  "description": "Las tecnologías web incluyen HTML, CSS y JavaScript.",
-  "example": "<p>Hola</p>",
-  "tips": "Aprende primero HTML."
-},
-
+    "aliases": ["pagina web", "sitio web", "web", "crear web", "hacer pagina"],
+    "description": "Una pagina web normalmente combina HTML, CSS y JavaScript. HTML crea la estructura, CSS define el diseno y JavaScript agrega comportamiento.",
+    "example": "<h1>Mi pagina</h1>\n<button id=\"saludo\">Saludar</button>",
+    "tips": "Aprende primero HTML, luego CSS y despues JavaScript. Ese orden hace mas facil entender como se construye una web completa."
+  },
+  "frontend": {
+    "aliases": ["front end", "cliente", "interfaz web", "lado cliente"],
+    "description": "Frontend es la parte visible e interactiva de una aplicacion web. Trabaja con HTML, CSS y JavaScript para mostrar contenido, recibir acciones del usuario y comunicarse con servidores.",
+    "example": "HTML = estructura\nCSS = estilo\nJavaScript = comportamiento",
+    "tips": "Un buen frontend no solo se ve bien: tambien debe ser claro, rapido, accesible y facil de usar."
+  },
+  "backend": {
+    "aliases": ["back end", "servidor", "lado servidor", "api backend"],
+    "description": "Backend es la parte de una aplicacion que funciona en el servidor. Maneja datos, usuarios, seguridad, bases de datos y reglas internas. Python puede usarse para backend con frameworks como Flask o Django.",
+    "example": "from flask import Flask\napp = Flask(__name__)",
+    "tips": "El backend no suele verse directamente, pero sostiene funciones importantes como login, guardado de datos y respuestas de APIs."
+  },
   "variable": {
-    "description": "Una variable almacena información.",
-    "example": "let nombre = 'Juan';",
-    "tips": "Usa nombres claros y fáciles de entender."
+    "aliases": ["variables", "let", "const", "var", "asignacion"],
+    "description": "Una variable guarda informacion para usarla despues. Puede almacenar texto, numeros, booleanos, listas, objetos u otros valores.",
+    "example": "let nombre = 'Juan';\nconst edad = 20;\n\n# Python\nnombre = 'Juan'",
+    "tips": "Usa nombres claros como puntos, vidas, nombreUsuario o totalCompra. Un buen nombre hace que el codigo sea mas facil de entender."
   },
-
+  "constante": {
+    "aliases": ["const", "valor constante", "inmutable"],
+    "description": "Una constante es un valor que no deberia cambiar durante la ejecucion. En JavaScript se declara con const. En Python se suele escribir en mayusculas por convencion.",
+    "example": "const MAX_VIDAS = 3;\n\nMAX_VIDAS = 3",
+    "tips": "Usa constantes para valores fijos como limites, configuraciones, rutas o nombres que no deben modificarse."
+  },
   "funcion": {
-    "description": "Las funciones permiten reutilizar código.",
-    "example": "function saludar(){ return 'Hola'; }",
-    "tips": "Cada función debe encargarse de una sola tarea."
+    "aliases": ["funciones", "metodo", "metodos", "def", "function"],
+    "description": "Una funcion agrupa instrucciones para reutilizarlas. Puede recibir datos de entrada, llamados parametros, y puede devolver un resultado.",
+    "example": "function saludar(nombre) {\n  return 'Hola ' + nombre;\n}\n\n# Python\ndef saludar(nombre):\n    return 'Hola ' + nombre",
+    "tips": "Haz funciones pequenas y con una responsabilidad clara. Si una funcion hace demasiadas cosas, sera dificil de probar y corregir."
   },
-
+  "parametro": {
+    "aliases": ["parametros", "argumento", "argumentos"],
+    "description": "Un parametro es una variable que una funcion recibe para trabajar. Un argumento es el valor real que envias cuando llamas esa funcion.",
+    "example": "function sumar(a, b) {\n  return a + b;\n}\nsumar(2, 3);",
+    "tips": "Elige nombres de parametros que expliquen que espera la funcion, por ejemplo precio, cantidad o usuario."
+  },
+  "return": {
+    "aliases": ["retornar", "devolver", "valor devuelto"],
+    "description": "return termina una funcion y devuelve un valor al lugar donde fue llamada. Sin return, una funcion puede ejecutar acciones pero no entregar un resultado util.",
+    "example": "function doble(numero) {\n  return numero * 2;\n}",
+    "tips": "Usa return cuando necesitas guardar, comparar o reutilizar el resultado de una funcion."
+  },
   "if": {
-    "description": "if sirve para tomar decisiones.",
-    "example": "if(x > 5){ console.log(x); }",
-    "tips": "Evita demasiados if anidados."
+    "aliases": ["condicion", "condicional", "si", "decision"],
+    "description": "if permite ejecutar codigo solo si una condicion es verdadera. Es una de las bases para que un programa tome decisiones.",
+    "example": "if (puntos >= 100) {\n  console.log('Ganaste');\n}",
+    "tips": "Manten las condiciones simples. Si una condicion se vuelve muy larga, guardala en una variable con un nombre claro."
   },
-
   "else": {
-    "description": "else ejecuta código cuando if no se cumple.",
-    "example": "if(x > 5){} else {}",
-    "tips": "Mantén las condiciones simples."
+    "aliases": ["sino", "else if", "elif", "alternativa"],
+    "description": "else define que hacer cuando la condicion de un if no se cumple. Tambien puedes encadenar varias condiciones con else if en JavaScript o elif en Python.",
+    "example": "if (edad >= 18) {\n  console.log('Mayor de edad');\n} else {\n  console.log('Menor de edad');\n}",
+    "tips": "No abuses de muchos else anidados. A veces conviene separar la logica en funciones."
   },
-
   "for": {
-    "description": "for repite instrucciones varias veces.",
-    "example": "for(let i=0; i<5; i++){}",
-    "tips": "Cuidado con los loops infinitos."
+    "aliases": ["bucle for", "ciclo for", "iterar", "recorrer"],
+    "description": "for repite instrucciones una cantidad controlada de veces. Es muy util para recorrer arrays, listas, letras de un texto o rangos numericos.",
+    "example": "for (let i = 0; i < 5; i++) {\n  console.log(i);\n}\n\n# Python\nfor i in range(5):\n    print(i)",
+    "tips": "Asegurate de que el ciclo tenga un final. En JavaScript revisa bien el contador para evitar ciclos infinitos."
   },
-
   "while": {
-    "description": "while ejecuta código mientras una condición sea verdadera.",
-    "example": "while(x < 10){ x++; }",
-    "tips": "Asegúrate de actualizar la condición."
+    "aliases": ["bucle while", "ciclo while", "mientras"],
+    "description": "while repite codigo mientras una condicion sea verdadera. Se usa cuando no sabes exactamente cuantas veces se repetira algo.",
+    "example": "let vidas = 3;\nwhile (vidas > 0) {\n  vidas--;\n}",
+    "tips": "Dentro del while debe cambiar algo que haga falsa la condicion en algun momento, o el programa se quedara atrapado."
   },
-
   "array": {
-    "description": "Un array almacena múltiples valores.",
-    "example": "let frutas = ['manzana', 'pera'];",
-    "tips": "Usa arrays para manejar listas."
+    "aliases": ["arrays", "lista", "listas", "arreglo", "arreglos"],
+    "description": "Un array o lista guarda varios valores en orden. En JavaScript se llama array y en Python normalmente se llama list.",
+    "example": "let frutas = ['manzana', 'pera', 'uva'];\nconsole.log(frutas[0]);\n\n# Python\nfrutas = ['manzana', 'pera', 'uva']",
+    "tips": "Los indices suelen empezar en 0. El primer elemento esta en la posicion 0, no en la posicion 1."
   },
-
   "objeto": {
-    "description": "Los objetos agrupan información relacionada.",
-    "example": "let persona = {nombre:'Juan', edad:20};",
-    "tips": "Usa objetos para representar entidades."
+    "aliases": ["objetos", "object", "diccionario", "dictionary", "dict"],
+    "description": "Un objeto agrupa datos relacionados usando pares clave-valor. En JavaScript se llaman objetos; en Python una estructura parecida es el diccionario.",
+    "example": "const persona = {\n  nombre: 'Ana',\n  edad: 18\n};\n\n# Python\npersona = {'nombre': 'Ana', 'edad': 18}",
+    "tips": "Usa objetos para representar entidades como jugador, enemigo, usuario, producto o configuracion."
   },
-
   "clase": {
-    "description": "Una clase funciona como plantilla para crear objetos.",
-    "example": "class Persona { constructor(nombre){} }",
-    "tips": "Las clases ayudan a organizar proyectos grandes."
+    "aliases": ["class", "clases", "poo", "programacion orientada a objetos"],
+    "description": "Una clase es una plantilla para crear objetos con propiedades y comportamientos. Ayuda a organizar codigo cuando hay varias entidades parecidas.",
+    "example": "class Jugador {\n  constructor(nombre) {\n    this.nombre = nombre;\n  }\n}\n\n# Python\nclass Jugador:\n    def __init__(self, nombre):\n        self.nombre = nombre",
+    "tips": "Usa clases cuando necesitas crear muchos objetos con la misma estructura, como jugadores, enemigos o items."
   },
-
-  "loop": {
-    "description": "Los loops automatizan tareas repetitivas.",
-    "example": "for(let i=0; i<10; i++){}",
-    "tips": "Usa loops solo cuando sean necesarios."
-  },
-
-  "operadores": {
-    "description": "Los operadores permiten hacer cálculos y comparaciones.",
-    "example": "5 + 5",
-    "tips": "Aprende primero +, -, *, / y %."
-  },
-
-  "suma": {
-    "description": "La suma agrega valores.",
-    "example": "5 + 5",
-    "tips": "La suma es uno de los operadores básicos."
-  },
-
-  "resta": {
-    "description": "La resta disminuye valores.",
-    "example": "10 - 5",
-    "tips": "Verifica siempre el orden de los números."
-  },
-
-  "multiplicacion": {
-    "description": "La multiplicación repite una suma varias veces.",
-    "example": "5 * 5",
-    "tips": "Usa multiplicación para cálculos repetitivos."
-  },
-
-  "division": {
-    "description": "La división reparte un valor.",
-    "example": "10 / 2",
-    "tips": "Evita dividir entre cero."
-  },
-
   "boolean": {
-    "description": "Un boolean solo puede ser verdadero o falso.",
-    "example": "true",
-    "tips": "Los booleanos son fundamentales en condiciones."
+    "aliases": ["booleano", "bool", "true", "false", "verdadero", "falso"],
+    "description": "Un booleano solo puede tener dos valores: verdadero o falso. Sirve para condiciones, estados y decisiones.",
+    "example": "let activo = true;\nif (activo) {\n  console.log('Encendido');\n}",
+    "tips": "Nombres como estaActivo, tieneLlave o puedeSaltar dejan claro que la variable guarda un booleano."
   },
-
   "string": {
-    "description": "Un string almacena texto.",
-    "example": "'Hola Mundo'",
-    "tips": "Usa comillas para definir texto."
+    "aliases": ["texto", "cadena", "cadenas", "str"],
+    "description": "Un string es texto dentro de comillas. Puede contener letras, numeros escritos como texto, espacios y simbolos.",
+    "example": "let mensaje = 'Hola Mundo';\n\n# Python\nmensaje = 'Hola Mundo'",
+    "tips": "No confundas el numero 10 con el texto '10'. Uno sirve para calculos y el otro es una cadena."
   },
-
-  "integer": {
-    "description": "Integer representa números enteros.",
-    "example": "10",
-    "tips": "No uses decimales en integers."
+  "number": {
+    "aliases": ["numero", "numeros", "integer", "int", "float", "decimal", "entero"],
+    "description": "Los numeros representan cantidades. En JavaScript el tipo principal es number. En Python existen int para enteros y float para decimales.",
+    "example": "let puntos = 100;\nlet velocidad = 2.5;\n\n# Python\npuntos = 100\nvelocidad = 2.5",
+    "tips": "Usa numeros para calculos. Si viene de un formulario web, puede llegar como texto y debes convertirlo antes de sumar."
   },
-
-  "float": {
-    "description": "Float representa números decimales.",
-    "example": "3.14",
-    "tips": "Usa float cuando necesites precisión decimal."
+  "operadores": {
+    "aliases": ["operador", "suma", "resta", "multiplicacion", "division", "modulo", "comparacion"],
+    "description": "Los operadores permiten calcular, comparar o combinar valores. Incluyen aritmeticos como +, -, *, /, %, comparaciones como >, <, == y operadores logicos como &&, || y !.",
+    "example": "let total = precio * cantidad;\nlet puedeEntrar = edad >= 18 && tieneEntrada;",
+    "tips": "Diferencia asignar de comparar: = asigna, mientras que == o === comparan en JavaScript."
   },
-
   "comentario": {
-    "description": "Los comentarios ayudan a documentar el código.",
-    "example": "// Esto es un comentario",
-    "tips": "Comenta solo lo necesario."
+    "aliases": ["comentarios", "documentar codigo", "nota en codigo"],
+    "description": "Los comentarios son notas para humanos dentro del codigo. El programa los ignora, pero ayudan a explicar intenciones, pasos complejos o decisiones importantes.",
+    "example": "// JavaScript: esto es un comentario\n\n# Python: esto es un comentario",
+    "tips": "Comenta el por que de una decision, no cada linea obvia. Un exceso de comentarios puede hacer el codigo mas dificil de leer."
   },
-
   "debug": {
-    "description": "Debug es el proceso de encontrar errores.",
-    "example": "console.log(variable)",
-    "tips": "Divide el problema en partes pequeñas."
+    "aliases": ["debugging", "depurar", "buscar error", "corregir error", "bug"],
+    "description": "Debug es el proceso de encontrar y corregir errores. Consiste en reproducir el problema, revisar datos, aislar la causa y probar una solucion.",
+    "example": "console.log(variable);\n\n# Python\nprint(variable)",
+    "tips": "No intentes arreglar todo a la vez. Prueba una hipotesis pequena y confirma si el error cambia."
   },
-
   "error": {
-    "description": "Los errores ocurren cuando el código falla.",
-    "example": "SyntaxError",
-    "tips": "Lee cuidadosamente los mensajes de error."
+    "aliases": ["errores", "syntaxerror", "typeerror", "exception", "excepcion"],
+    "description": "Un error ocurre cuando el codigo falla o no produce lo esperado. Puede ser de sintaxis, de tipos, de logica, de nombres mal escritos o de datos incorrectos.",
+    "example": "SyntaxError: falta cerrar una llave o parentesis\nTypeError: se uso un valor con el tipo equivocado",
+    "tips": "Lee el mensaje de error completo y revisa la linea indicada. Muchas veces la pista principal ya esta ahi."
   },
-
   "dom": {
-    "description": "El DOM representa la estructura de una página web.",
-    "example": "document.getElementById('titulo')",
-    "tips": "Manipula el DOM con cuidado para evitar lentitud."
+    "aliases": ["document object model", "document", "elemento html", "manipular html"],
+    "description": "El DOM es la representacion en memoria de una pagina HTML. JavaScript puede leerlo y modificarlo para cambiar textos, clases, estilos, atributos o elementos.",
+    "example": "const titulo = document.getElementById('titulo');\ntitulo.textContent = 'Nuevo titulo';",
+    "tips": "Manipula el DOM con cuidado. Si haces demasiados cambios repetidos, la pagina puede sentirse lenta."
   },
-
   "evento": {
-    "description": "Los eventos detectan acciones del usuario.",
-    "example": "button.addEventListener('click', funcion)",
-    "tips": "Usa eventos para crear interactividad."
+    "aliases": ["eventos", "click", "input", "listener", "addEventListener"],
+    "description": "Un evento es una accion que ocurre en la pagina, como un click, escribir en un input, mover el mouse o cargar el documento. JavaScript puede escuchar eventos y responder.",
+    "example": "boton.addEventListener('click', () => {\n  alert('Boton presionado');\n});",
+    "tips": "Los eventos son clave para hacer interfaces interactivas. Con ellos conectas lo que el usuario hace con lo que el programa responde."
   },
-
+  "api": {
+    "aliases": ["apis", "fetch", "peticion", "request", "respuesta servidor"],
+    "description": "Una API permite que programas se comuniquen entre si. En web, JavaScript puede pedir datos a una API usando fetch y luego mostrar la respuesta en pantalla.",
+    "example": "fetch('/api/jugadores')\n  .then(res => res.json())\n  .then(data => console.log(data));",
+    "tips": "Cuando uses APIs, revisa el estado de la respuesta y maneja errores. No asumas que el servidor siempre respondera bien."
+  },
+  "json": {
+    "aliases": ["formato json", "datos json", "objeto json"],
+    "description": "JSON es un formato de texto para guardar o enviar datos. Se parece a los objetos de JavaScript, pero exige comillas dobles en claves y textos.",
+    "example": "{\n  \"nombre\": \"Ana\",\n  \"puntos\": 120\n}",
+    "tips": "JSON es comun en APIs y archivos de configuracion. Si falla, revisa comas, comillas dobles y llaves."
+  },
   "flexbox": {
-    "description": "Flexbox ayuda a organizar elementos en CSS.",
-    "example": "display: flex;",
-    "tips": "Flexbox simplifica el alineamiento."
+    "aliases": ["flex", "display flex", "alinear css", "centrar css"],
+    "description": "Flexbox es una herramienta de CSS para distribuir elementos en una direccion: fila o columna. Es ideal para centrar, separar, alinear y ordenar componentes.",
+    "example": ".contenedor {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}",
+    "tips": "Usa justify-content para el eje principal y align-items para el eje cruzado. Cambian segun flex-direction."
   },
-
   "grid": {
-    "description": "CSS Grid crea diseños complejos.",
-    "example": "display: grid;",
-    "tips": "Grid es ideal para layouts grandes."
+    "aliases": ["css grid", "display grid", "layout grid", "grilla"],
+    "description": "CSS Grid permite crear disenos en filas y columnas. Es muy util para estructuras mas grandes como galerias, tableros, paneles o layouts completos.",
+    "example": ".galeria {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  gap: 16px;\n}",
+    "tips": "Flexbox sirve muy bien para una dimension. Grid brilla cuando necesitas controlar filas y columnas al mismo tiempo."
+  },
+  "responsive": {
+    "aliases": ["responsive design", "adaptable", "mobile", "media query", "media queries"],
+    "description": "Un diseno responsive se adapta a diferentes tamanos de pantalla, como celular, tablet y computadora. CSS lo logra con unidades flexibles, grid, flexbox y media queries.",
+    "example": "@media (max-width: 600px) {\n  .menu {\n    flex-direction: column;\n  }\n}",
+    "tips": "No disenes solo para tu pantalla. Prueba tamanos pequenos y evita textos o botones que se salgan del contenedor."
+  },
+  "selector": {
+    "aliases": ["selectores", "selector css", "clase css", "id css"],
+    "description": "Un selector CSS indica a que elementos se aplican los estilos. Puedes seleccionar por etiqueta, clase, id, atributo o combinaciones.",
+    "example": "p { color: blue; }\n.card { padding: 16px; }\n#titulo { font-size: 32px; }",
+    "tips": "Usa clases para estilos reutilizables. Evita depender demasiado de ids para diseno general."
+  },
+  "semantica": {
+    "aliases": ["html semantico", "etiquetas semanticas", "semantic html"],
+    "description": "HTML semantico usa etiquetas que describen el significado del contenido, no solo su apariencia. Por ejemplo header, nav, main, article, section, aside y footer.",
+    "example": "<main>\n  <article>\n    <h2>Noticia</h2>\n    <p>Contenido...</p>\n  </article>\n</main>",
+    "tips": "La semantica ayuda a lectores de pantalla, buscadores y otros desarrolladores a entender mejor la pagina."
+  },
+  "formulario": {
+    "aliases": ["formularios", "form", "input", "label", "button"],
+    "description": "Un formulario HTML permite capturar datos del usuario, como nombre, correo, contrasena, comentarios o selecciones. JavaScript puede validarlo antes de enviarlo.",
+    "example": "<form>\n  <label for=\"nombre\">Nombre</label>\n  <input id=\"nombre\" name=\"nombre\">\n  <button>Enviar</button>\n</form>",
+    "tips": "Siempre relaciona label con input usando for e id. Eso mejora accesibilidad y facilidad de uso."
+  },
+  "accesibilidad": {
+    "aliases": ["a11y", "accesible", "lectores de pantalla", "aria"],
+    "description": "La accesibilidad busca que una pagina pueda ser usada por mas personas, incluyendo quienes usan teclado, lectores de pantalla o tienen baja vision.",
+    "example": "<button aria-label=\"Cerrar menu\">X</button>",
+    "tips": "Usa buen contraste, texto claro, etiquetas semanticas, labels en formularios y navegacion usable con teclado."
+  },
+  "asincronia": {
+    "aliases": ["async", "await", "promesa", "promesas", "asincrono"],
+    "description": "La asincronia permite esperar tareas que tardan, como pedir datos a una API, leer archivos o esperar temporizadores, sin congelar toda la aplicacion.",
+    "example": "async function cargarDatos() {\n  const respuesta = await fetch('/datos.json');\n  return await respuesta.json();\n}",
+    "tips": "Usa async y await para escribir codigo asincrono mas legible. Maneja errores con try/catch."
+  },
+  "trycatch": {
+    "aliases": ["try catch", "try", "catch", "manejar errores"],
+    "description": "try/catch permite manejar errores sin que el programa se detenga de forma brusca. El bloque try intenta ejecutar codigo y catch captura el error si ocurre.",
+    "example": "try {\n  const datos = JSON.parse(texto);\n} catch (error) {\n  console.log('JSON invalido');\n}",
+    "tips": "No uses catch para ocultar errores. Usalo para responder de manera controlada y mostrar mensajes utiles."
+  },
+  "scope": {
+    "aliases": ["ambito", "alcance", "variable local", "variable global"],
+    "description": "El scope o ambito define donde existe una variable y desde donde puede usarse. Una variable local vive dentro de una funcion o bloque; una global puede usarse desde muchas partes.",
+    "example": "function jugar() {\n  let puntos = 0;\n}\n// puntos no existe aqui afuera",
+    "tips": "Evita demasiadas variables globales. Hacen mas dificil saber quien modifica los datos."
+  },
+  "python lista": {
+    "aliases": ["listas python", "list python"],
+    "description": "Una lista en Python guarda varios elementos ordenados. Puedes agregar, quitar, recorrer y acceder a elementos por indice.",
+    "example": "numeros = [1, 2, 3]\nnumeros.append(4)\nprint(numeros[0])",
+    "tips": "Usa listas cuando el orden importa o cuando necesitas recorrer varios valores."
+  },
+  "python diccionario": {
+    "aliases": ["diccionarios python", "dict python"],
+    "description": "Un diccionario en Python guarda pares clave-valor. Es util para representar datos con nombre, como un usuario, producto o configuracion.",
+    "example": "jugador = {\n    'nombre': 'Alex',\n    'puntos': 50\n}\nprint(jugador['nombre'])",
+    "tips": "Antes de leer una clave, confirma que existe o usa get para evitar errores."
+  },
+  "indentacion": {
+    "aliases": ["indentacion python", "espacios python", "sangria"],
+    "description": "En Python la indentacion no es decoracion: define bloques de codigo. Un if, for, while, funcion o clase necesita lineas indentadas debajo.",
+    "example": "if puntos > 10:\n    print('Buen trabajo')",
+    "tips": "Usa 4 espacios por nivel de indentacion. Mezclar tabs y espacios puede causar errores dificiles de ver."
+  },
+  "import": {
+    "aliases": ["imports", "modulo", "modulos", "libreria", "biblioteca"],
+    "description": "import permite usar codigo de otros modulos o librerias. En Python se usa para cargar herramientas externas o archivos propios.",
+    "example": "import math\nprint(math.sqrt(25))",
+    "tips": "Importa solo lo que necesitas. Si una libreria no existe en tu entorno, debes instalarla antes."
+  },
+  "node": {
+    "aliases": ["nodejs", "node.js", "javascript backend"],
+    "description": "Node.js permite ejecutar JavaScript fuera del navegador. Se usa para servidores, herramientas, APIs, scripts y aplicaciones backend.",
+    "example": "console.log('JavaScript ejecutandose en Node.js');",
+    "tips": "Node.js no reemplaza al navegador. Es otra forma de ejecutar JavaScript, especialmente util en servidores."
+  },
+  "framework": {
+    "aliases": ["frameworks", "react", "vue", "angular", "django", "flask"],
+    "description": "Un framework es un conjunto de herramientas y reglas para construir aplicaciones mas rapido. En JavaScript existen React, Vue y Angular; en Python existen Flask y Django.",
+    "example": "React ayuda a crear interfaces.\nFlask ayuda a crear servidores web en Python.",
+    "tips": "Aprende primero las bases del lenguaje. Un framework es mas facil cuando ya entiendes variables, funciones, objetos y eventos."
+  },
+  "algoritmo": {
+    "aliases": ["algoritmos", "pasos", "logica", "resolver problema"],
+    "description": "Un algoritmo es una serie de pasos ordenados para resolver un problema. Puede escribirse en lenguaje natural, pseudocodigo o codigo real.",
+    "example": "1. Leer puntos\n2. Si puntos >= 100, mostrar victoria\n3. Si no, continuar jugando",
+    "tips": "Antes de programar, explica la solucion en pasos simples. Si no puedes explicarla, probablemente aun no esta clara."
+  },
+  "pseudocodigo": {
+    "aliases": ["pseudo codigo", "pseudocode"],
+    "description": "El pseudocodigo describe la logica de un programa sin preocuparse por la sintaxis exacta de un lenguaje. Sirve para planear antes de escribir codigo.",
+    "example": "SI vidas > 0 ENTONCES\n  continuar juego\nSINO\n  mostrar game over",
+    "tips": "Usa pseudocodigo cuando el problema parece grande. Te ayuda a separar la idea de los detalles tecnicos."
+  },
+  "buena practica": {
+    "aliases": ["buenas practicas", "codigo limpio", "clean code", "organizar codigo"],
+    "description": "Las buenas practicas son habitos que hacen el codigo mas claro, mantenible y menos propenso a errores: nombres descriptivos, funciones pequenas, evitar repeticion y probar cambios.",
+    "example": "Mal: let x = 10;\nMejor: let vidasRestantes = 10;",
+    "tips": "El codigo se lee mas veces de las que se escribe. Prioriza claridad sobre parecer complicado."
+  },
+  "git": {
+    "aliases": ["control de versiones", "versiones", "repositorio"],
+    "description": "Git es una herramienta para guardar versiones del codigo. Permite volver atras, comparar cambios, crear ramas y colaborar con otras personas.",
+    "example": "git status\ngit add archivo.js\ngit commit -m \"Agrega pantalla inicial\"",
+    "tips": "Haz commits pequenos con mensajes claros. Es mas facil encontrar errores cuando cada cambio tiene una intencion concreta."
+  },
+  "seguridad": {
+    "aliases": ["seguridad web", "xss", "inyeccion", "validacion"],
+    "description": "La seguridad en programacion busca proteger datos y evitar usos peligrosos. En web es importante validar entradas, escapar contenido, cuidar contrasenas y no confiar ciegamente en datos del usuario.",
+    "example": "No insertes texto del usuario como HTML sin revisarlo.",
+    "tips": "Nunca guardes contrasenas en texto plano. En frontend, no pongas secretos reales dentro del codigo publico."
+  },
+  "derek": {
+    "aliases": ["creador", "fundador"],
+    "description": "Creo que estas hablando del creador, quiero que sepas que esta muy feliz de que estes aqui, muchas gracias por jugar, y esperamos de que tengas un muyyy buen dia :D",
+    "example": "",
+    "tips": ""
   }
 }

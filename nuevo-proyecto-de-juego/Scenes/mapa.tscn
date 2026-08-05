@@ -1,19 +1,23 @@
-[gd_scene load_steps=80 format=3 uid="uid://c8xdfgfadkqvv"]
+[gd_scene load_steps=104 format=3 uid="uid://c8xdfgfadkqvv"]
 
-[ext_resource type="Texture2D" uid="uid://bpgjolounvrv1" path="res://Sprites/mapa.png" id="1_goa42"]
+[ext_resource type="Texture2D" uid="uid://bpgjolounvrv1" path="res://Assets/Art/World/world_map.png" id="1_goa42"]
 [ext_resource type="Script" uid="uid://bac3vreya4lye" path="res://Scripts/mapa.gd" id="1_v43pt"]
-[ext_resource type="Texture2D" uid="uid://c2od0dqr3t46a" path="res://Sprites/2336803927.png" id="2_u55js"]
+[ext_resource type="Texture2D" uid="uid://c2od0dqr3t46a" path="res://Assets/Art/World/portal.png" id="2_u55js"]
 [ext_resource type="Shader" uid="uid://dkanji6jcgpd0" path="res://Shaders/movimientoNubes.gdshader" id="2_vm3su"]
-[ext_resource type="Texture2D" uid="uid://4olivh7yjon7" path="res://Sprites/Sprite-0003-pantalla de inmontañas.png" id="3_u55js"]
-[ext_resource type="Texture2D" uid="uid://dtu6ylnfitjbk" path="res://Sprites/botonNivel-.png" id="4_kkfvo"]
-[ext_resource type="Texture2D" uid="uid://bgvd4qfhecjdh" path="res://Sprites/botonNivel+.png" id="5_kbneb"]
+[ext_resource type="Texture2D" uid="uid://4olivh7yjon7" path="res://Assets/Art/Backgrounds/mountains_front.png" id="3_u55js"]
+[ext_resource type="Texture2D" uid="uid://dtu6ylnfitjbk" path="res://Assets/Art/Interface/level_locked.png" id="4_kkfvo"]
+[ext_resource type="Texture2D" uid="uid://bgvd4qfhecjdh" path="res://Assets/Art/Interface/level_unlocked.png" id="5_kbneb"]
 [ext_resource type="Script" uid="uid://cvwt8c2nrbhmm" path="res://Scripts/entrar_Nivel1.gd" id="5_lkwsl"]
 [ext_resource type="Script" uid="uid://bcvkjfou1uf8w" path="res://Scripts/personaje_Mapa.gd" id="7_ykhg3"]
-[ext_resource type="FontFile" uid="uid://baaqbul0ssy6w" path="res://Pixeled.ttf" id="7_yq38d"]
-[ext_resource type="SpriteFrames" uid="uid://dhej5nryb2i2v" path="res://Sprites/girl_frames.tres" id="10_yq38d"]
-[ext_resource type="Texture2D" uid="uid://cweuufdiqbo4b" path="res://Sprites/Cabeza robot1.png" id="11_1lxf8"]
-[ext_resource type="Texture2D" uid="uid://bjulsahabrt5s" path="res://Sprites/Cabeza robot2.png" id="11_nl0av"]
-[ext_resource type="Texture2D" uid="uid://duy8mxoftu0lu" path="res://Sprites/menu Hamburguer.png" id="14_604li"]
+[ext_resource type="FontFile" uid="uid://baaqbul0ssy6w" path="res://Assets/Fonts/Pixeled.ttf" id="7_yq38d"]
+[ext_resource type="SpriteFrames" uid="uid://dhej5nryb2i2v" path="res://Assets/Animations/girl_frames.tres" id="10_yq38d"]
+[ext_resource type="Texture2D" uid="uid://cweuufdiqbo4b" path="res://Assets/Art/Characters/Robot/robot_head_idle.png" id="11_1lxf8"]
+[ext_resource type="Texture2D" uid="uid://bjulsahabrt5s" path="res://Assets/Art/Characters/Robot/robot_head_talk.png" id="11_nl0av"]
+[ext_resource type="Texture2D" uid="uid://co5nkcy0n0bxi" path="res://Assets/Art/World/Foreground/world_map parts-Sheet pilares.png" id="13_pilares"]
+[ext_resource type="Texture2D" uid="uid://duy8mxoftu0lu" path="res://Assets/Art/Interface/menu.png" id="14_604li"]
+[ext_resource type="Texture2D" uid="uid://b4s4tu7axpwvq" path="res://Assets/Art/Interface/sign.png" id="15_menu"]
+[ext_resource type="Texture2D" uid="uid://3xcot30l7vqi" path="res://Assets/Art/World/Foreground/world_map parts-Sheet snakes.png" id="16_snakes"]
+[ext_resource type="Texture2D" uid="uid://bf0dy52rrhms6" path="res://Assets/Art/World/Foreground/world_map parts-Sheet. arbolpng.png" id="17_tree"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p41nb"]
 atlas = ExtResource("1_goa42")
@@ -481,22 +485,158 @@ _data = {
 &"show": SubResource("Animation_yq38d")
 }
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_qguc3"]
+animations = []
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pillar_1"]
+atlas = ExtResource("13_pilares")
+region = Rect2(0, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pillar_2"]
+atlas = ExtResource("13_pilares")
+region = Rect2(320, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pillar_3"]
+atlas = ExtResource("13_pilares")
+region = Rect2(640, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pillar_4"]
+atlas = ExtResource("13_pilares")
+region = Rect2(960, 0, 320, 180)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pillars"]
+animations = [{
+"frames": [{
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_pillar_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pillar_2")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_pillar_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pillar_4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_snake_1"]
+atlas = ExtResource("16_snakes")
+region = Rect2(0, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_snake_2"]
+atlas = ExtResource("16_snakes")
+region = Rect2(320, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_snake_3"]
+atlas = ExtResource("16_snakes")
+region = Rect2(640, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_snake_4"]
+atlas = ExtResource("16_snakes")
+region = Rect2(960, 0, 320, 180)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_snakes"]
+animations = [{
+"frames": [{
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_snake_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_snake_2")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_snake_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_snake_4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tree_1"]
+atlas = ExtResource("17_tree")
+region = Rect2(0, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tree_2"]
+atlas = ExtResource("17_tree")
+region = Rect2(320, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tree_3"]
+atlas = ExtResource("17_tree")
+region = Rect2(640, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tree_4"]
+atlas = ExtResource("17_tree")
+region = Rect2(960, 0, 320, 180)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tree"]
+animations = [{
+"frames": [{
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_tree_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tree_2")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_tree_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tree_4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lkwsl"]
 radius = 14.0
 height = 32.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aj1jk"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_focus"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_menu_button"]
+bg_color = Color(0.016632833, 0.3695544, 0.5415818, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_menu_button_hover"]
+bg_color = Color(0.045716114, 0.53670007, 0.77654856, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_menu_info"]
+bg_color = Color(0, 0, 0, 0.6509804)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [node name="Mapa" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_v43pt")
 
 [node name="Mapa" type="AnimatedSprite2D" parent="."]
+z_index = -1
 position = Vector2(637.99994, 367)
 scale = Vector2(4.55, 4)
 sprite_frames = SubResource("SpriteFrames_kkfvo")
 animation = &"new_animation"
 autoplay = "new_animation"
-frame_progress = 0.45586658
+frame_progress = 0.22815497
 metadata/_edit_lock_ = true
 
 [node name="Planeta Tierra" type="AnimatedSprite2D" parent="."]
@@ -617,38 +757,135 @@ shape = SubResource("CircleShape2D_kkfvo")
 [node name="Nivel5" type="Node" parent="."]
 
 [node name="Area2D" type="Area2D" parent="Nivel5"]
-position = Vector2(383, -237)
+position = Vector2(1081, 315)
 
 [node name="Sprite2D" type="Sprite2D" parent="Nivel5/Area2D"]
-position = Vector2(701.99994, 584)
+position = Vector2(0, 32.00002)
 scale = Vector2(2.281249, 1.7343761)
 texture = ExtResource("4_kkfvo")
 
 [node name="Label" type="Label" parent="Nivel5/Area2D"]
 modulate = Color(1, 1, 1, 0)
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 216.0
+offset_top = 104.0
+offset_right = 256.0
+offset_bottom = 127.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Nivel5/Area2D"]
-position = Vector2(702, 583)
+position = Vector2(0, 32)
 shape = SubResource("CircleShape2D_kkfvo")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="mapa partes" type="AnimatedSprite2D" parent="."]
+position = Vector2(638, 367)
+scale = Vector2(4.55, 4)
+sprite_frames = SubResource("SpriteFrames_qguc3")
+animation = &""
+
+[node name="StaticBody2D" type="StaticBody2D" parent="mapa partes"]
+position = Vector2(-140.21977, -91.75)
+scale = Vector2(0.2197802, 0.25)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="mapa partes/StaticBody2D"]
+position = Vector2(921, 500)
+scale = Vector2(4.55, 4)
+polygon = PackedVector2Array(1.5384521, -0.5, 1.5384521, -0.5, 1.5384521, -4.5, 6.8131866, -8.5, 13.846146, -12.5, 15.604401, -14.5, 17.36264, -14.5, 19.12088, -12.5, 19.12088, -8.5, 15.604401, -4.5, 13.846146, -2.5, 13.846146, -0.5, 10.329666, 1.5, 8.571426, 3.5, 6.8131866, 3.5, 3.2967072, 3.5)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="mapa partes/StaticBody2D"]
+position = Vector2(1016, 567)
+polygon = PackedVector2Array(0, -3, 0, -19, 8, -19, 64, -19, 56, -11, 48, -3)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="mapa partes/StaticBody2D"]
+position = Vector2(1248.4529, 556.94745)
+polygon = PackedVector2Array(-0.45288086, -4.9474487, -0.45288086, -20.947449, -56.45288, -20.947449, -56.45288, -4.9474487)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="mapa partes/StaticBody2D"]
+position = Vector2(1112, 500)
+polygon = PackedVector2Array(0, 0, -8, -4, -8, -12, -8, -8, -8, -16, 56, -16, 48, -8, 32, 0)
+
+[node name="Arbol" type="CollisionPolygon2D" parent="mapa partes/StaticBody2D"]
+position = Vector2(-40.264145, 480.22754)
+polygon = PackedVector2Array(0.2641449, -0.22753906, 0.2641449, 15.772461, 32.264145, 15.772461, 32.264145, 7.772461, 56.264145, 7.772461, 56.264145, -8.227539, 0.2641449, -8.227539)
+
+[node name="JS1" type="CollisionPolygon2D" parent="mapa partes/StaticBody2D"]
+position = Vector2(-11.756531, 372.56073)
+polygon = PackedVector2Array(-4.243469, 3.43927, -4.243469, -12.56073, -12.243469, -20.56073, -20.24347, -28.56073, -4.243469, -44.56073, -4.243469, -60.56073, -28.24347, -60.56073, -36.24347, -52.56073, -36.24347, -36.56073, -44.24347, -28.56073, -44.24347, -20.56073, -36.24347, -12.56073, -28.24347, -4.56073, -28.24347, 3.43927)
+
+[node name="JS2" type="CollisionPolygon2D" parent="mapa partes/StaticBody2D"]
+position = Vector2(388.00793, 394.8639)
+rotation = 1.5707964
+polygon = PackedVector2Array(-4.243469, 3.43927, -4.243469, -12.56073, -12.243469, -20.56073, -17.181488, -33.318848, -4.243469, -44.56073, -4.243469, -60.56073, -28.24347, -60.56073, -36.24347, -52.56073, -36.24347, -36.56073, -44.24347, -28.56073, -44.24347, -20.56073, -36.24347, -12.56073, -28.24347, -4.56073, -28.24347, 3.43927)
+
+[node name="JS3" type="CollisionPolygon2D" parent="mapa partes/StaticBody2D"]
+position = Vector2(332.41837, 250.72502)
+polygon = PackedVector2Array(-4.4183655, -2.7250214, 43.581635, -2.7250214, 43.581635, -18.725021, 91.581635, 21.274979, 91.581635, 29.274979, 51.581635, 61.27498, 43.581635, 37.27498, 19.581635, 37.27498, 3.5816345, 37.27498, 3.5816345, 37.27498, -4.4183655, 37.27498)
+
+[node name="JS4" type="CollisionPolygon2D" parent="mapa partes/StaticBody2D"]
+position = Vector2(-23.677673, 290.03754)
+scale = Vector2(4.55, 4)
+polygon = PackedVector2Array(-0.070840836, -0.50938416, 13.995092, -0.50938416, 13.995092, -8.509384, 6.962126, -10.509384, 1.6874008, -10.509384, -1.8290825, -6.509384, -1.8290825, -2.5093842)
+
+[node name="JS5" type="CollisionPolygon2D" parent="mapa partes/StaticBody2D"]
+position = Vector2(120.39368, 272.7579)
+scale = Vector2(4.55, 4)
+polygon = PackedVector2Array(6.9464455, -0.18947601, -0.086523056, -0.18947601, -0.086523056, 15.810524, 6.9464455, 15.810524, 6.9464455, 11.810524, 3.4299603, 11.810524, 3.4299603, 3.810524, 6.9464455, 3.810524)
+
+[node name="JS6" type="CollisionPolygon2D" parent="mapa partes/StaticBody2D"]
+position = Vector2(280.9751, 331.74652)
+rotation = 3.1415927
+scale = Vector2(4.55, 4)
+polygon = PackedVector2Array(6.9464455, -0.18947601, -0.086523056, -0.18947601, -0.086523056, 15.810524, 6.9464455, 15.810524, 6.9464455, 11.810524, 3.4299603, 11.810524, 3.4299603, 3.810524, 6.9464455, 3.810524)
+
+[node name="SERPAz" type="CollisionPolygon2D" parent="mapa partes/StaticBody2D"]
+polygon = PackedVector2Array(976, 296, 928, 296, 936, 312, 928, 320, 928, 336, 960, 360, 1040, 360, 1056, 336, 1064, 328, 1072, 320, 1088, 320, 1104, 336, 1104, 344, 1112, 344, 1112, 328, 1088, 312, 1048, 312, 1032, 320, 1016, 320, 1016, 312, 1024, 312, 1016, 296)
+
+[node name="SERPAm" type="CollisionPolygon2D" parent="mapa partes/StaticBody2D"]
+position = Vector2(1117.8054, 374.9314)
+polygon = PackedVector2Array(2.19458, 1.0686035, -5.80542, -22.931396, 26.19458, -30.931396, 18.19458, -46.931396, 18.19458, -54.931396, 26.19458, -54.931396, 34.19458, -54.931396, 34.19458, -62.931396, 26.19458, -62.931396, 26.19458, -70.9314, 114.19458, -70.9314, 106.19458, -54.931396, 122.19458, -54.931396, 122.19458, -22.931396, 2.19458, 9.0686035)
+
+[node name="Pilares" type="Node2D" parent="."]
+position = Vector2(1129.4, 559)
+
+[node name="Visual" type="AnimatedSprite2D" parent="Pilares"]
+position = Vector2(-491.4, -192)
+scale = Vector2(4.55, 4)
+sprite_frames = SubResource("SpriteFrames_pillars")
+autoplay = "default"
+
+[node name="ObjetosNiveles" type="Node2D" parent="."]
+position = Vector2(1079.35, 375)
+
+[node name="Visual" type="AnimatedSprite2D" parent="ObjetosNiveles"]
+position = Vector2(-441.35, -8)
+scale = Vector2(4.55, 4)
+sprite_frames = SubResource("SpriteFrames_snakes")
+autoplay = "default"
+
+[node name="Arbol" type="Node2D" parent="."]
+position = Vector2(-19.475, 483)
+
+[node name="Visual" type="AnimatedSprite2D" parent="Arbol"]
+position = Vector2(657.475, -116)
+scale = Vector2(4.55, 4)
+sprite_frames = SubResource("SpriteFrames_tree")
+autoplay = "default"
+
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 z_index = 1
+position = Vector2(320, 288)
 script = ExtResource("7_ykhg3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 texture_repeat = 2
-position = Vector2(612, 676)
+position = Vector2(0, 40)
 scale = Vector2(2.25, 2.25)
 sprite_frames = ExtResource("10_yq38d")
 animation = &"walk_up"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(612, 692)
+position = Vector2(1, 55)
 shape = SubResource("CapsuleShape2D_lkwsl")
 
 [node name="Montaña1" type="StaticBody2D" parent="."]
@@ -665,6 +902,24 @@ position = Vector2(1280, 1200)
 position = Vector2(-483.11133, -681)
 scale = Vector2(0.23570809, 1)
 polygon = PackedVector2Array(13.199951, 1, 81.08032, -38.99997, 216.84155, -62.99997, 624.125, -86.99997, 1302.9307, -102.99997, 2151.438, -94.99997, 2321.1392, -86.99997, 2321.1392, 113, 1812.0352, 137, 861.70703, 89, 624.125, 89, 556.2444, 97, 386.54297, 81, 352.60278, 65, 182.90137, 65, -20.740479, 57, -54.680664, 25, 13.199951, 9, -54.680664, 9, -88.62109, 33, -54.680664, 65, 182.90137, 73, 352.60278, 73, 352.60278, 89, 556.2444, 105, 861.70703, 105, 1302.9307, 129, 1812.0352, 145, 2355.0796, 121, 2355.0796, -94.99997, 2151.438, -102.99997, 1302.9307, -110.99997, 624.125, -94.99997, 216.84155, -70.99997, 47.140137, -46.99997, -20.740479, 1)
+
+[node name="Montaña3" type="StaticBody2D" parent="Montaña2"]
+position = Vector2(-1344, -808)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Montaña2/Montaña3"]
+polygon = PackedVector2Array(-16, 0, -24, 0, -24, 216, 168, 256, 344, 200, 448, 224, 600, 152, 600, 112, 488, 32, 424, 8, 264, -8, 168, -24, -8, -16, -8, 0, 168, -16, 264, 0, 424, 16, 480, 40, 592, 120, 488, 176, 424, 184, 360, 168, 360, 168, 280, 192, 248, 184, 200, 208, 80, 184, 40, 176, -8, 176, -8, 0)
+
+[node name="Montaña4" type="StaticBody2D" parent="."]
+position = Vector2(-65, 208)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Montaña4"]
+polygon = PackedVector2Array(1, 0, -23, 0, -23, 168, 1, 168, 1, 8, 265, 0, 425, 8, 585, 48, 633, 80, 681, 160, 681, 184, 585, 224, 529, 240, 553, 256, 681, 200, 697, 176, 689, 152, 617, 48, 425, 0, 265, -16)
+
+[node name="Montaña5" type="StaticBody2D" parent="."]
+position = Vector2(1353, 224)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Montaña5"]
+polygon = PackedVector2Array(-1, 0, -1, 200, -9, 200, -9, 8, -89, 8, -105, 0, -129, -8, -177, -8, -313, 0, -481, 16, -537, 32, -601, 56, -625, 72, -641, 80, -657, 96, -673, 112, -689, 152, -697, 160, -681, 176, -665, 176, -641, 184, -609, 184, -569, 192, -537, 200, -521, 208, -497, 208, -473, 216, -505, 224, -697, 184, -705, 168, -705, 152, -673, 96, -601, 48, -481, 8, -273, -8, -129, -16, -89, 0)
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -700,11 +955,138 @@ offset_top = 8.0
 offset_right = -23.999878
 offset_bottom = 104.0
 theme_override_styles/hover = SubResource("StyleBoxFlat_aj1jk")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_focus")
 icon = ExtResource("14_604li")
 flat = true
 icon_alignment = 1
 expand_icon = true
 
+[node name="MenuPanel" type="Control" parent="Control"]
+visible = false
+z_index = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1041.0
+offset_top = 73.0
+offset_right = -253.0
+offset_bottom = 561.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/MenuPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -28.0
+offset_top = -70.0
+offset_right = 28.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("15_menu")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Title" type="Label" parent="Control/MenuPanel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 96.0
+offset_top = 61.0
+offset_right = -96.0
+offset_bottom = 117.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_yq38d")
+theme_override_font_sizes/font_size = 20
+text = "Menu"
+horizontal_alignment = 1
+
+[node name="Buttons" type="VBoxContainer" parent="Control/MenuPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -248.0
+offset_top = -110.0
+offset_right = 248.0
+offset_bottom = 170.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 18
+
+[node name="VolverMenu" type="Button" parent="Control/MenuPanel/Buttons"]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_yq38d")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_menu_button")
+theme_override_styles/hover = SubResource("StyleBoxFlat_menu_button_hover")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_focus")
+text = "Volver al menu"
+
+[node name="Logros" type="Button" parent="Control/MenuPanel/Buttons"]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_yq38d")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_menu_button")
+theme_override_styles/hover = SubResource("StyleBoxFlat_menu_button_hover")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_focus")
+text = "Logros"
+
+[node name="InfoJugador" type="Button" parent="Control/MenuPanel/Buttons"]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_yq38d")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_menu_button")
+theme_override_styles/hover = SubResource("StyleBoxFlat_menu_button_hover")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_focus")
+text = "Info jugador"
+
+[node name="Opciones" type="Button" parent="Control/MenuPanel/Buttons"]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_yq38d")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_menu_button")
+theme_override_styles/hover = SubResource("StyleBoxFlat_menu_button_hover")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_focus")
+text = "Opciones"
+
+[node name="InfoLabel" type="Label" parent="Control/MenuPanel"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -248.0
+offset_top = 190.0
+offset_right = 248.0
+offset_bottom = 292.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_yq38d")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_menu_info")
+text = "Informacion"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="body_entered" from="Nivel1/Area2D" to="Nivel1/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Nivel1/Area2D" to="Nivel1/Area2D" method="_on_body_exited"]
 [connection signal="pressed" from="Control/Chatbot" to="." method="_on_chatbot_pressed"]
+[connection signal="pressed" from="Control/Menu_Hamburguesa" to="." method="_on_menu_hamburguesa_pressed"]
+[connection signal="pressed" from="Control/MenuPanel/Buttons/VolverMenu" to="." method="_on_volver_menu_pressed"]
+[connection signal="pressed" from="Control/MenuPanel/Buttons/Logros" to="." method="_on_logros_pressed"]
+[connection signal="pressed" from="Control/MenuPanel/Buttons/InfoJugador" to="." method="_on_info_jugador_pressed"]
+[connection signal="pressed" from="Control/MenuPanel/Buttons/Opciones" to="." method="_on_opciones_pressed"]

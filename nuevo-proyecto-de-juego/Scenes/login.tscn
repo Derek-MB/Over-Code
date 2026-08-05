@@ -1,0 +1,149 @@
+[gd_scene load_steps=8 format=3 uid="uid://sbu3kdq3estf"]
+
+[ext_resource type="Script" uid="uid://k3cf7h2sgeet" path="res://Scripts/login.gd" id="1_script"]
+[ext_resource type="FontFile" uid="uid://baaqbul0ssy6w" path="res://Assets/Fonts/Pixeled.ttf" id="2_font"]
+[ext_resource type="Shader" uid="uid://srx1g0mexdd" path="res://Shaders/code_Simbols.gdshader" id="3_5iow8"]
+[ext_resource type="Texture2D" uid="uid://ddboffungdf1q" path="res://Assets/Art/Backgrounds/sky.png" id="3_sky"]
+[ext_resource type="Texture2D" uid="uid://y4wf2ahlrb8h" path="res://Assets/Art/Interface/character_selection_background.png" id="4_88cqn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_panel"]
+bg_color = Color(0.055, 0.078, 0.16, 0.94)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.3, 0.75, 0.95, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0, 0, 0, 0.45)
+shadow_size = 10
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m7a0j"]
+shader = ExtResource("3_5iow8")
+
+[node name="Login" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_sky")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="Center"]
+clip_children = 1
+custom_minimum_size = Vector2(510, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBox_panel")
+
+[node name="Pattern" type="TextureRect" parent="Center/Panel"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_m7a0j")
+layout_mode = 2
+texture = ExtResource("4_88cqn")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="Margin" type="MarginContainer" parent="Center/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 42
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 42
+theme_override_constants/margin_bottom = 32
+
+[node name="Content" type="VBoxContainer" parent="Center/Panel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Title" type="Label" parent="Center/Panel/Margin/Content"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 25
+text = "Iniciar sesion"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="Center/Panel/Margin/Content"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 11
+text = "Tu progreso se guardara en tu cuenta"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Name" type="LineEdit" parent="Center/Panel/Margin/Content"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 14
+placeholder_text = "Nombre para mostrar"
+max_length = 30
+
+[node name="Email" type="LineEdit" parent="Center/Panel/Margin/Content"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 14
+placeholder_text = "Correo electronico"
+
+[node name="Password" type="LineEdit" parent="Center/Panel/Margin/Content"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 14
+placeholder_text = "Contraseña (mínimo 6 caracteres)"
+secret = true
+
+[node name="Submit" type="Button" parent="Center/Panel/Margin/Content"]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 16
+text = "Entrar"
+
+[node name="ChangeMode" type="Button" parent="Center/Panel/Margin/Content"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 12
+text = "Crear una cuenta"
+flat = true
+
+[node name="Status" type="Label" parent="Center/Panel/Margin/Content"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 11
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Back" type="Button" parent="Center/Panel/Margin/Content"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 12
+text = "Volver al menu"
+flat = true
+
+[connection signal="pressed" from="Center/Panel/Margin/Content/Submit" to="." method="_on_submit_pressed"]
+[connection signal="pressed" from="Center/Panel/Margin/Content/ChangeMode" to="." method="_on_change_mode_pressed"]
+[connection signal="pressed" from="Center/Panel/Margin/Content/Back" to="." method="_on_back_pressed"]

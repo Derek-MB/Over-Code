@@ -9,8 +9,8 @@ var knowledge = {}
 
 var talking = false
 
-var idle_texture = preload("res://Sprites/Cabeza robot1.png")
-var talk_texture = preload("res://Sprites/Cabeza robot2.png")
+var idle_texture = preload("res://Assets/Art/Characters/Robot/robot_head_idle.png")
+var talk_texture = preload("res://Assets/Art/Characters/Robot/robot_head_talk.png")
 
 var stopwords = [
     "que",
@@ -47,14 +47,86 @@ var stopwords = [
     "quiero",
     "necesito",
     "ayuda",
-	"dime"
+    "dime",
+    "explicame",
+    "dame",
+    "informacion",
+    "info",
+    "tema",
+    "temas"
 ]
+
+func get_topic_aliases(key, info):
+
+    var aliases = [key]
+
+    if typeof(info) == TYPE_DICTIONARY and info.has("aliases"):
+
+        for alias in info["aliases"]:
+            aliases.append(str(alias))
+
+    return aliases
+
+func question_matches_topic(cleaned_question, cleaned_words, key, info):
+
+    for alias in get_topic_aliases(key, info):
+
+        var alias_words = clean_text(alias)
+
+        if alias_words.is_empty():
+            continue
+
+        if alias_words.size() == 1:
+
+            if alias_words[0] in cleaned_words:
+                return true
+
+        else:
+
+            var alias_phrase = " ".join(alias_words)
+
+            if alias_phrase in cleaned_question:
+                return true
+
+    return false
+
+func get_topic_match_score(cleaned_question, cleaned_words, key, info):
+
+    var best_score = -1
+
+    for alias in get_topic_aliases(key, info):
+
+        var alias_words = clean_text(alias)
+
+        if alias_words.is_empty():
+            continue
+
+        if alias_words.size() == 1:
+
+            var word_position = cleaned_words.find(alias_words[0])
+
+            if word_position != -1:
+                var word_score = 10 - min(word_position, 9)
+                best_score = max(best_score, word_score)
+
+        else:
+
+            var alias_phrase = " ".join(alias_words)
+            var phrase_position = cleaned_question.find(alias_phrase)
+
+            if phrase_position != -1:
+                var phrase_score = alias_words.size() * 10
+                best_score = max(best_score, phrase_score)
+
+    return best_score
 
 func _ready():
 
     load_knowledge()
 
     robot.texture = idle_texture
+
+    input.text_submitted.connect(_on_line_edit_text_submitted)
 
 func load_knowledge():
 
@@ -109,7 +181,7 @@ func _on_button_pressed():
 
     var question = input.text
 
-    if question == "":
+    if question == "" or talking:
         return
 
     var cleaned_words = clean_text(question)
@@ -121,38 +193,45 @@ func _on_button_pressed():
 
     cleaned_question = cleaned_question.strip_edges()
 
-    var found = false
+    var best_info = {}
+    var best_score = -1
 
     # búsqueda más inteligente
     for key in knowledge.keys():
 
-        if key in cleaned_question:
+        var info = knowledge[key]
 
-            found = true
+        var score = get_topic_match_score(cleaned_question, cleaned_words, key, info)
 
-            var info = knowledge[key]
+        if score > best_score:
+            best_score = score
+            best_info = info
 
-            var response = ""
+    if best_score != -1:
 
-            response += info["description"] + "\n\n"
+        var response = ""
 
-            response += "Ejemplo:\n"
-            response += info["example"] + "\n\n"
+        response += best_info["description"] + "\n\n"
 
-            response += "Consejo:\n"
-            response += info["tips"]
+        response += "Ejemplo:\n"
+        response += best_info["example"] + "\n\n"
 
-            await type_text(response)
+        response += "Consejo:\n"
+        response += best_info["tips"]
 
-            break
+        await type_text(response)
 
-    if not found:
+    else:
 
         await type_text(
 			"Lo siento.\n\nSolo puedo responder preguntas relacionadas con programación, HTML, CSS, JavaScript y Python."
         )
 
     input.text = ""
+
+func _on_line_edit_text_submitted(_new_text):
+
+    await _on_button_pressed()
 
 func type_text(text):
 

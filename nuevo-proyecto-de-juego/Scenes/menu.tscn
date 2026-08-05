@@ -1,13 +1,14 @@
 [gd_scene load_steps=13 format=3 uid="uid://5or7blq2mubw"]
 
-[ext_resource type="Texture2D" uid="uid://ddboffungdf1q" path="res://Sprites/sky.png" id="2_wbdvm"]
+[ext_resource type="Texture2D" uid="uid://ddboffungdf1q" path="res://Assets/Art/Backgrounds/sky.png" id="2_wbdvm"]
 [ext_resource type="Shader" uid="uid://dkanji6jcgpd0" path="res://Shaders/movimientoNubes.gdshader" id="3_q3rjx"]
-[ext_resource type="FontFile" uid="uid://baaqbul0ssy6w" path="res://Pixeled.ttf" id="3_wwsa2"]
-[ext_resource type="Texture2D" uid="uid://4olivh7yjon7" path="res://Sprites/Sprite-0003-pantalla de inmontañas.png" id="4_6swd7"]
+[ext_resource type="FontFile" uid="uid://baaqbul0ssy6w" path="res://Assets/Fonts/Pixeled.ttf" id="3_wwsa2"]
+[ext_resource type="Texture2D" uid="uid://4olivh7yjon7" path="res://Assets/Art/Backgrounds/mountains_front.png" id="4_6swd7"]
 [ext_resource type="Shader" uid="uid://b3f0mo46q6dp8" path="res://Shaders/movimientoMontañas.gdshader" id="5_7qvly"]
-[ext_resource type="Texture2D" uid="uid://blgjlhftxngn5" path="res://Sprites/Sprite-000montañas2.png" id="6_wbdvm"]
-[ext_resource type="Texture2D" uid="uid://dwhli5cfyqot0" path="res://Sprites/Sprite-0002- Titulo 2 OVER CODE-Recovered-1.png" id="7_6swd7"]
-[ext_resource type="Texture2D" uid="uid://c1firc88fpvua" path="res://Sprites/Sprite-0002- Titulo 2 OVER CODE-Recovered-2.png" id="8_7qvly"]
+[ext_resource type="Texture2D" uid="uid://blgjlhftxngn5" path="res://Assets/Art/Backgrounds/mountains_back.png" id="6_wbdvm"]
+[ext_resource type="Texture2D" uid="uid://dwhli5cfyqot0" path="res://Assets/Art/Interface/title_frame_1.png" id="7_6swd7"]
+[ext_resource type="Texture2D" uid="uid://c1firc88fpvua" path="res://Assets/Art/Interface/title_frame_2.png" id="8_7qvly"]
+[ext_resource type="Script" path="res://Scripts/menu.gd" id="9_menu"]
 
 [sub_resource type="GDScript" id="GDScript_q3rjx"]
 script/source = "extends Control
@@ -18,6 +19,7 @@ func _on_jugar_pressed() -> void:
     TransitionManager.cambiar_escena(\"res://Scenes/jugar.tscn\")
 
 func _on_opciones_pressed() -> void:
+    Global.opciones_return_scene = \"res://Scenes/menu.tscn\"
     TransitionManager.cambiar_escena(\"res://Scenes/opciones.tscn\")
 
 
@@ -45,7 +47,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = SubResource("GDScript_q3rjx")
+script = ExtResource("9_menu")
 
 [node name="fondo" type="TextureRect" parent="."]
 texture_repeat = 2
@@ -127,9 +129,6 @@ theme_override_fonts/font = ExtResource("3_wwsa2")
 theme_override_font_sizes/font_size = 20
 text = "Salir"
 
-[connection signal="pressed" from="BoxContainer/Jugar" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="BoxContainer/Jugar" to="." method="_on_jugar_pressed"]
 [connection signal="pressed" from="BoxContainer/Opciones" to="." method="_on_opciones_pressed"]
-[connection signal="pressed" from="BoxContainer/Opciones" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="BoxContainer/Salir" to="." method="_on_salir_pressed"]
-[connection signal="pressed" from="BoxContainer/Salir" to="." method="_on_button_3_pressed"]

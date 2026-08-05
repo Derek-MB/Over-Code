@@ -1,0 +1,184 @@
+[gd_scene load_steps=22 format=3 uid="uid://dll1yxj4l01bm"]
+
+[ext_resource type="Shader" uid="uid://srx1g0mexdd" path="res://Shaders/code_Simbols.gdshader" id="1_eme1q"]
+[ext_resource type="Script" uid="uid://cvvfk8ibw58ov" path="res://Scripts/chat_bot.gd" id="1_tkwik"]
+[ext_resource type="Texture2D" uid="uid://y4wf2ahlrb8h" path="res://Assets/Art/Interface/character_selection_background.png" id="2_2kmo4"]
+[ext_resource type="Texture2D" uid="uid://bbix8jprs4p04" path="res://Assets/Art/Interface/robot_screen.png" id="4_6c2m8"]
+[ext_resource type="Texture2D" uid="uid://cweuufdiqbo4b" path="res://Assets/Art/Characters/Robot/robot_head_idle.png" id="5_4xbfv"]
+[ext_resource type="FontFile" uid="uid://baaqbul0ssy6w" path="res://Assets/Fonts/Pixeled.ttf" id="5_6c2m8"]
+[ext_resource type="Texture2D" uid="uid://r60p3wx7tt6q" path="res://Assets/Art/Interface/send_button.png" id="6_4xbfv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xf8fc"]
+shader = ExtResource("1_eme1q")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ism3b"]
+atlas = ExtResource("4_6c2m8")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4cg2w"]
+atlas = ExtResource("4_6c2m8")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wtw76"]
+atlas = ExtResource("4_6c2m8")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1krj"]
+atlas = ExtResource("4_6c2m8")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kd3ui"]
+atlas = ExtResource("4_6c2m8")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwhaw"]
+atlas = ExtResource("4_6c2m8")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5s1m1"]
+atlas = ExtResource("4_6c2m8")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v1u8p"]
+atlas = ExtResource("4_6c2m8")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pxm2e"]
+atlas = ExtResource("4_6c2m8")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wgc5u"]
+atlas = ExtResource("4_6c2m8")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qrf5y"]
+animations = [{
+"frames": [{
+"duration": 20.0,
+"texture": SubResource("AtlasTexture_ism3b")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_4cg2w")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_wtw76")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_u1krj")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_kd3ui")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_jwhaw")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_5s1m1")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_v1u8p")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_pxm2e")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_wgc5u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ism3b"]
+bg_color = Color(0.6, 0.6, 0.6, 0.5803922)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4cg2w"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tkwik")
+
+[node name="Pattern" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_xf8fc")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 1286.0713
+offset_bottom = 597.1428
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.56, 0.56)
+texture = ExtResource("2_2kmo4")
+stretch_mode = 1
+
+[node name="TextureRect" type="AnimatedSprite2D" parent="."]
+position = Vector2(704, 352)
+scale = Vector2(18, 11.062501)
+sprite_frames = SubResource("SpriteFrames_qrf5y")
+autoplay = "default"
+frame_progress = 0.91891426
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 304.0
+offset_top = 112.0
+offset_right = 1152.0
+offset_bottom = 520.0
+theme_override_fonts/normal_font = ExtResource("5_6c2m8")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 568.0
+offset_right = 1088.0
+offset_bottom = 632.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ism3b")
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 568.0
+offset_right = 1024.0
+offset_bottom = 632.0
+theme_override_fonts/font = ExtResource("5_6c2m8")
+placeholder_text = "Dime tu pregunta"
+flat = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 1016.0
+offset_top = 553.0
+offset_right = 1100.0
+offset_bottom = 656.0
+theme_override_styles/hover = SubResource("StyleBoxFlat_4cg2w")
+icon = ExtResource("6_4xbfv")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Robot" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 212.0
+offset_top = 104.0
+offset_right = 300.0
+offset_bottom = 192.0
+texture = ExtResource("5_4xbfv")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.15
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

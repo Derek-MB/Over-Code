@@ -4,8 +4,8 @@ extends CharacterBody2D
 
 @export var speed = 200
 
-var boy_frames = preload("res://Sprites/boy_frames.tres")
-var girl_frames = preload("res://Sprites/girl_frames.tres")
+var boy_frames = preload("res://Assets/Animations/boy_frames.tres")
+var girl_frames = preload("res://Assets/Animations/girl_frames.tres")
 
 var last_direction = Vector2.DOWN
 

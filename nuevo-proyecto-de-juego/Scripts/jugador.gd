@@ -13,10 +13,10 @@ func _ready():
 
     # CAMBIAR PERSONAJE SEGÚN SELECCIÓN
     if PlayerData.selected_character == "boy":
-        sprite.sprite_frames = preload("res://Sprites/boy_frames.tres")
+        sprite.sprite_frames = preload("res://Assets/Animations/boy_frames.tres")
 
     else:
-        sprite.sprite_frames = preload("res://Sprites/girl_frames.tres")
+        sprite.sprite_frames = preload("res://Assets/Animations/girl_frames.tres")
 
 
 func _physics_process(delta):

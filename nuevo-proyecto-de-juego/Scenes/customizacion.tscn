@@ -2,9 +2,9 @@
 
 [ext_resource type="Shader" path="res://Shaders/code_Simbols.gdshader" id="1_ndr5v"]
 [ext_resource type="Script" uid="uid://buis2f3oepssq" path="res://Scripts/customizacion.gd" id="1_ou8m5"]
-[ext_resource type="Texture2D" uid="uid://y4wf2ahlrb8h" path="res://Sprites/Seleccion personaje bg.png" id="2_ou8m5"]
-[ext_resource type="FontFile" uid="uid://baaqbul0ssy6w" path="res://Pixeled.ttf" id="3_4nnip"]
-[ext_resource type="Texture2D" uid="uid://b4s4tu7axpwvq" path="res://Sprites/Letrero.png" id="5_4nnip"]
+[ext_resource type="Texture2D" uid="uid://y4wf2ahlrb8h" path="res://Assets/Art/Interface/character_selection_background.png" id="2_ou8m5"]
+[ext_resource type="FontFile" uid="uid://baaqbul0ssy6w" path="res://Assets/Fonts/Pixeled.ttf" id="3_4nnip"]
+[ext_resource type="Texture2D" uid="uid://b4s4tu7axpwvq" path="res://Assets/Art/Interface/sign.png" id="5_4nnip"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xtnni"]
 shader = ExtResource("1_ndr5v")

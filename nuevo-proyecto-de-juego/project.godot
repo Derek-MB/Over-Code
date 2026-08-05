@@ -21,6 +21,7 @@ TransitionManager="*res://Scenes/transition.tscn"
 SaveManager="*res://Scripts/SaveManager.gd"
 Global="*res://Scripts/Global.gd"
 PlayerData="*res://Scripts/PlayerData.gd"
+Supabase="*res://Scripts/Supabase.gd"
 
 [display]
 
@@ -32,10 +33,12 @@ window/stretch/aspect="expand"
 [file_customization]
 
 folder_colors={
+"res://Assets/": "red",
+"res://Data/": "orange",
+"res://Music/": "pink",
 "res://Scenes/": "purple",
 "res://Scripts/": "yellow",
-"res://Shaders/": "teal",
-"res://Sprites/": "red"
+"res://Shaders/": "teal"
 }
 
 [input]

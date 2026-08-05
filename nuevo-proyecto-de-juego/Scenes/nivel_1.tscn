@@ -1,12 +1,15 @@
-[gd_scene load_steps=21 format=4 uid="uid://bqmxgf6buq7ni"]
+[gd_scene load_steps=32 format=4 uid="uid://bqmxgf6buq7ni"]
 
-[ext_resource type="Texture2D" uid="uid://cc5efjbv5t15t" path="res://Sprites/suelo.png" id="1_3givb"]
+[ext_resource type="Texture2D" uid="uid://cc5efjbv5t15t" path="res://Assets/Art/World/ground.png" id="1_3givb"]
 [ext_resource type="Script" uid="uid://dwma45k6g5jsv" path="res://Scripts/jugador.gd" id="2_ecx5m"]
-[ext_resource type="Texture2D" uid="uid://ddboffungdf1q" path="res://Sprites/sky.png" id="3_ecx5m"]
-[ext_resource type="SpriteFrames" uid="uid://t7iye4p5rs18" path="res://Sprites/boy_frames.tres" id="4_epurl"]
-[ext_resource type="Texture2D" uid="uid://dhymfa0oiwe3x" path="res://Sprites/robot idle.png" id="5_hwnlj"]
+[ext_resource type="Texture2D" uid="uid://ddboffungdf1q" path="res://Assets/Art/Backgrounds/sky.png" id="3_ecx5m"]
+[ext_resource type="SpriteFrames" uid="uid://t7iye4p5rs18" path="res://Assets/Animations/boy_frames.tres" id="4_epurl"]
+[ext_resource type="Texture2D" uid="uid://dhymfa0oiwe3x" path="res://Assets/Art/Characters/Robot/robot_idle.png" id="5_hwnlj"]
 [ext_resource type="Script" uid="uid://fson45p6c4d7" path="res://Scripts/robot_nivel.gd" id="5_jmhww"]
-[ext_resource type="Texture2D" uid="uid://dhhww5bn0vnsl" path="res://Sprites/robot hablando-Sheet.png" id="7_22i05"]
+[ext_resource type="Texture2D" uid="uid://dfyn411lowfv6" path="res://Assets/Art/Characters/Robot/robot_flying.png" id="6_xvap8"]
+[ext_resource type="Texture2D" uid="uid://dhhww5bn0vnsl" path="res://Assets/Art/Characters/Robot/robot_talking_sheet.png" id="7_22i05"]
+[ext_resource type="Texture2D" uid="uid://b8ph82hf5qla0" path="res://Assets/Art/Interface/speech_bubble.png" id="8_kyajb"]
+[ext_resource type="FontFile" uid="uid://baaqbul0ssy6w" path="res://Assets/Fonts/Pixeled.ttf" id="9_ql53f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_epurl"]
 texture = ExtResource("1_3givb")
@@ -163,6 +166,38 @@ sources/0 = SubResource("TileSetAtlasSource_epurl")
 radius = 9.0
 height = 44.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_p3mfg"]
+atlas = ExtResource("6_xvap8")
+region = Rect2(0, 0, 38, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gh6o0"]
+atlas = ExtResource("6_xvap8")
+region = Rect2(38, 0, 38, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t31ra"]
+atlas = ExtResource("6_xvap8")
+region = Rect2(76, 0, 38, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eaxed"]
+atlas = ExtResource("6_xvap8")
+region = Rect2(114, 0, 38, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k3g0m"]
+atlas = ExtResource("6_xvap8")
+region = Rect2(152, 0, 38, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3digf"]
+atlas = ExtResource("6_xvap8")
+region = Rect2(190, 0, 38, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m5wsa"]
+atlas = ExtResource("6_xvap8")
+region = Rect2(228, 0, 38, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_guoqe"]
+atlas = ExtResource("6_xvap8")
+region = Rect2(266, 0, 38, 25)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_jmhww"]
 atlas = ExtResource("5_hwnlj")
 region = Rect2(0, 0, 40, 40)
@@ -197,6 +232,35 @@ region = Rect2(40, 0, 40, 40)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_61jm7"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p3mfg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gh6o0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t31ra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eaxed")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k3g0m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3digf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m5wsa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_guoqe")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jmhww")
@@ -244,6 +308,7 @@ scale = Vector2(4, 3.988889)
 texture = ExtResource("3_ecx5m")
 region_enabled = true
 region_rect = Rect2(2, 2, 318.10303, 178.13394)
+metadata/_edit_lock_ = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(638, 473)
@@ -281,9 +346,12 @@ position = Vector2(250, 395)
 script = ExtResource("5_jmhww")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="RobotNivel"]
-position = Vector2(4, 58)
+position = Vector2(4, 57)
+scale = Vector2(1, 1.075)
 sprite_frames = SubResource("SpriteFrames_61jm7")
-animation = &"idle"
+animation = &"fly"
+autoplay = "idle"
+frame_progress = 0.24720529
 
 [node name="Area2D" type="Area2D" parent="RobotNivel"]
 position = Vector2(-24, 25)
@@ -294,13 +362,12 @@ position = Vector2(29, -13)
 shape = SubResource("RectangleShape2D_22i05")
 
 [node name="SpeechBubble" type="Control" parent="RobotNivel"]
-custom_minimum_size = Vector2(300, 100)
 layout_mode = 3
 anchors_preset = 0
-offset_left = -144.0
-offset_top = -74.0
-offset_right = 156.0
-offset_bottom = 82.0
+offset_left = -139.0
+offset_top = -69.0
+offset_right = -134.0
+offset_bottom = -69.0
 
 [node name="TextureRect" type="TextureRect" parent="RobotNivel/SpeechBubble"]
 layout_mode = 1
@@ -309,27 +376,27 @@ anchor_left = -0.35900003
 anchor_top = -2.055
 anchor_right = -0.35900003
 anchor_bottom = -2.055
-offset_left = 123.70001
-offset_top = 326.58002
-offset_right = 381.7
-offset_bottom = 410.58002
+offset_left = 43.795
+offset_top = 17.0
+offset_right = 147.795
+offset_bottom = 105.0
 mouse_filter = 2
+texture = ExtResource("8_kyajb")
 
 [node name="Label" type="Label" parent="RobotNivel/SpeechBubble"]
-z_index = 5
-custom_minimum_size = Vector2(300, 100)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.351
-anchor_top = -2.0860002
-anchor_right = -0.351
-anchor_bottom = -2.0860002
-offset_left = 104.3
-offset_top = 326.41605
-offset_right = 404.3
-offset_bottom = 426.41605
-theme_override_constants/outline_size = 4
-theme_override_font_sizes/font_size = 33
+anchor_left = -0.347
+anchor_top = -2.071
+anchor_right = -0.347
+anchor_bottom = -2.071
+offset_left = 58.735
+offset_top = 27.0
+offset_right = 137.735
+offset_bottom = 73.0
+theme_override_fonts/font = ExtResource("9_ql53f")
+theme_override_font_sizes/font_size = 6
+autowrap_mode = 2
 
 [node name="Timer" type="Timer" parent="RobotNivel"]
 

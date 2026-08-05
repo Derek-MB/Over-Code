@@ -10,9 +10,9 @@ func _ready():
     var personaje = SaveManager.current_slot_data["personaje"]
     
     if personaje == "boy":
-        preview.texture = preload("res://Sprites/Boy.png")
+        preview.texture = preload("res://Assets/Art/Characters/boy.png")
     elif personaje == "girl":
-        preview.texture = preload("res://Sprites/Girl.png")
+        preview.texture = preload("res://Assets/Art/Characters/girl.png")
 
 
 func _on_confirmar_pressed():

@@ -6,10 +6,19 @@ extends Node2D
 
 var activated = false
 
+const NORMAL_SPRITE_SCALE = Vector2(1.0, 1.075)
+const FLY_SPRITE_SCALE = Vector2(1.5, 1.6125)
 
 func _ready():
 
     bubble.visible = false
+    sprite.scale = NORMAL_SPRITE_SCALE
+
+
+func reproducir_animacion(nombre: String):
+
+    sprite.scale = FLY_SPRITE_SCALE if nombre == "fly" else NORMAL_SPRITE_SCALE
+    sprite.play(nombre)
 
 
 func _on_area_2d_body_entered(body):
@@ -25,7 +34,7 @@ func iniciar_tutorial():
 
     bubble.visible = true
 
-    sprite.play("talk")
+    reproducir_animacion("talk")
 
     await escribir_texto("Usa A y D para moverte")
 
@@ -43,7 +52,7 @@ func iniciar_tutorial():
 
     bubble.visible = false
 
-    sprite.play("idle")
+    reproducir_animacion("idle")
 
 
 func escribir_texto(texto):
@@ -60,7 +69,7 @@ func escribir_texto(texto):
 func mover_robot():
 
     # CAMBIAR A SPRITE VOLANDO
-    sprite.play("fly")
+    reproducir_animacion("fly")
 
     var tween = create_tween()
 
@@ -80,4 +89,4 @@ func mover_robot():
 
     await tween.finished
 
-    sprite.play("talk")
+    reproducir_animacion("talk")

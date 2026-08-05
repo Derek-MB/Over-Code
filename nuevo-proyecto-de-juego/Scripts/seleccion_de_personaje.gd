@@ -9,21 +9,19 @@ func _ready():
 func _on_boy_clicked(event):
     if event is InputEventMouseButton and event.pressed:
         seleccionar_personaje("boy")
-    Global.player_character = "boy"
 
 
 
 func _on_girl_clicked(event):
     if event is InputEventMouseButton and event.pressed:
         seleccionar_personaje("girl")
-    Global.player_character = "girl"
-    get_tree().change_scene_to_file("res://mapa.tscn")
 
 
 func seleccionar_personaje(tipo):
 
     # GUARDAR PERSONAJE EN PLAYERDATA
     PlayerData.selected_character = tipo
+    Global.player_character = tipo
 
     # Guardar elección
     SaveManager.current_slot_data["personaje"] = tipo
