@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=4 uid="uid://bqmxgf6buq7ni"]
+[gd_scene load_steps=66 format=4 uid="uid://bqmxgf6buq7ni"]
 
 [ext_resource type="Texture2D" uid="uid://cc5efjbv5t15t" path="res://Assets/Art/World/ground.png" id="1_3givb"]
 [ext_resource type="Script" uid="uid://dwma45k6g5jsv" path="res://Scripts/jugador.gd" id="2_ecx5m"]
@@ -18,11 +18,14 @@
 [ext_resource type="Script" uid="uid://c60h6lwt54usp" path="res://Scripts/nivel_1_controller.gd" id="10_controller"]
 [ext_resource type="Texture2D" uid="uid://djgdij6xc1ty8" path="res://Assets/Art/Backgrounds/Hoja_codigo.png" id="11_m5wsa"]
 [ext_resource type="Script" uid="uid://cv0ciy7xkk6bg" path="res://Scripts/meta.gd" id="11_meta_script"]
+[ext_resource type="Texture2D" uid="uid://csel6meepdgtl" path="res://Assets/Art/Backgrounds/alerta_completa.png" id="12_3xy45"]
 [ext_resource type="Texture2D" uid="uid://bjjqse45ghad2" path="res://Assets/Art/Backgrounds/meta.png" id="12_meta_texture"]
+[ext_resource type="Texture2D" uid="uid://danj667jak8ng" path="res://Assets/Art/Backgrounds/alerta_incompleta.png" id="13_kabt5"]
 [ext_resource type="Texture2D" uid="uid://duy8mxoftu0lu" path="res://Assets/Art/Interface/menu.png" id="13_menu_texture"]
 [ext_resource type="Texture2D" uid="uid://bvl8ao43mgljf" path="res://Assets/Art/Backgrounds/plataforma.png" id="21_guoqe"]
 [ext_resource type="PackedScene" uid="uid://c1xrcejfx24ie" path="res://Scenes/bloque_codigo.tscn" id="22_5iadn"]
 [ext_resource type="Script" uid="uid://crn0s1qstmoy7" path="res://Scripts/puzzle_codigo.gd" id="23_yj0hd"]
+[ext_resource type="Texture2D" uid="uid://cmfnvy5wb1v40" path="res://Assets/Art/Backgrounds/Glitch.png" id="26_8da1u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22i05"]
 size = Vector2(121.75, 133)
@@ -53,6 +56,47 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hkimd"]
+atlas = ExtResource("12_3xy45")
+region = Rect2(0, 0, 20, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfxdf"]
+atlas = ExtResource("12_3xy45")
+region = Rect2(20, 0, 20, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_moqox"]
+atlas = ExtResource("13_kabt5")
+region = Rect2(0, 0, 20, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5va5w"]
+atlas = ExtResource("13_kabt5")
+region = Rect2(20, 0, 20, 33)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_evhcb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hkimd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mfxdf")
+}],
+"loop": true,
+"name": &"completa",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_moqox")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5va5w")
+}],
+"loop": true,
+"name": &"incompleta",
 "speed": 5.0
 }]
 
@@ -353,7 +397,43 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_barrera_puzzle"]
-size = Vector2(36, 328)
+size = Vector2(36, 552)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eguv3"]
+atlas = ExtResource("26_8da1u")
+region = Rect2(0, 0, 32, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5rtf"]
+atlas = ExtResource("26_8da1u")
+region = Rect2(32, 0, 32, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77spe"]
+atlas = ExtResource("26_8da1u")
+region = Rect2(64, 0, 32, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yk7dw"]
+atlas = ExtResource("26_8da1u")
+region = Rect2(96, 0, 32, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fv2k8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eguv3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u5rtf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_77spe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yk7dw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 14.0
+}]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(-3, 0)
@@ -459,6 +539,14 @@ position = Vector2(1275.5, 400.23367)
 scale = Vector2(3.119566, 3.119566)
 sprite_frames = SubResource("SpriteFrames_3xy45")
 autoplay = "default"
+
+[node name="Alerta" type="AnimatedSprite2D" parent="."]
+position = Vector2(1952, 521.00006)
+scale = Vector2(2.1000035, 2.1186883)
+sprite_frames = SubResource("SpriteFrames_evhcb")
+animation = &"incompleta"
+autoplay = "incompleta"
+frame_progress = 0.19253787
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(651, 475)
@@ -712,12 +800,19 @@ codigo_texto = ")"
 position = Vector2(2048, 512)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BarreraPuzzle"]
-position = Vector2(-6, -116)
+position = Vector2(-6, -228)
 shape = SubResource("RectangleShape2D_barrera_puzzle")
 
 [node name="PuzzleCodigo" type="Node" parent="."]
 script = ExtResource("23_yj0hd")
 bloques = Array[NodePath]([NodePath("../BloqueCodigo"), NodePath("../BloqueCodigo2"), NodePath("../BloqueCodigo3")])
+
+[node name="Glitch" type="AnimatedSprite2D" parent="."]
+position = Vector2(2078.5, 278.5)
+scale = Vector2(3.28125, 5.47)
+sprite_frames = SubResource("SpriteFrames_fv2k8")
+autoplay = "default"
+frame_progress = 0.639414
 
 [connection signal="body_entered" from="Meta" to="Meta" method="_on_body_entered"]
 [connection signal="body_exited" from="Meta" to="Meta" method="_on_body_exited"]

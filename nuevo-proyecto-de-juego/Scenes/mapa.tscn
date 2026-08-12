@@ -601,7 +601,7 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lkwsl"]
-radius = 14.0
+radius = 8.0
 height = 32.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aj1jk"]
@@ -654,7 +654,7 @@ position = Vector2(640.00006, 367)
 scale = Vector2(4, 4.0111113)
 
 [node name="nubes" type="TextureRect" parent="."]
-z_index = 2
+z_index = 3
 texture_repeat = 2
 material = SubResource("ShaderMaterial_kbneb")
 anchors_preset = 15
@@ -717,13 +717,22 @@ texture = ExtResource("4_kkfvo")
 
 [node name="Label" type="Label" parent="Nivel2/Area2D"]
 modulate = Color(1, 1, 1, 0)
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 1123.0
+offset_top = 346.0
+offset_right = 1280.0
+offset_bottom = 402.0
+text = "La estructura: HTML
+ Enter/Espacio "
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Nivel2/Area2D"]
 position = Vector2(1202.0001, 440.99994)
 scale = Vector2(1, 0.99999994)
 shape = SubResource("CircleShape2D_kkfvo")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Nivel2/Area2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_kconx")
+}
 
 [node name="Nivel3" type="Node" parent="."]
 
@@ -739,12 +748,22 @@ scale = Vector2(2.281249, 1.7343761)
 texture = ExtResource("4_kkfvo")
 
 [node name="Label" type="Label" parent="Nivel3/Area2D"]
-offset_right = 40.0
-offset_bottom = 23.0
+modulate = Color(1, 1, 1, 0)
+offset_left = 615.0
+offset_top = 488.0
+offset_right = 782.0
+offset_bottom = 547.0
+text = "¿Estilo.. cascada?: CSS
+ Enter/Espacio "
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Nivel3/Area2D"]
 position = Vector2(702, 583)
 shape = SubResource("CircleShape2D_kkfvo")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Nivel3/Area2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_kconx")
+}
 
 [node name="Nivel4" type="Node" parent="."]
 
@@ -760,12 +779,22 @@ scale = Vector2(2.281249, 1.7343761)
 texture = ExtResource("4_kkfvo")
 
 [node name="Label" type="Label" parent="Nivel4/Area2D"]
-offset_right = 40.0
-offset_bottom = 23.0
+modulate = Color(1, 1, 1, 0)
+offset_left = 632.0
+offset_top = 494.0
+offset_right = 775.0
+offset_bottom = 543.0
+text = "NaN: Not a Null: JS
+ Enter/Espacio "
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Nivel4/Area2D"]
 position = Vector2(702, 588)
 shape = SubResource("CircleShape2D_kkfvo")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Nivel4/Area2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_kconx")
+}
 
 [node name="Nivel5" type="Node" parent="."]
 
@@ -782,14 +811,21 @@ texture = ExtResource("4_kkfvo")
 
 [node name="Label" type="Label" parent="Nivel5/Area2D"]
 modulate = Color(1, 1, 1, 0)
-offset_left = 216.0
-offset_top = 104.0
-offset_right = 256.0
-offset_bottom = 127.0
+offset_left = -113.0
+offset_top = -59.0
+offset_right = 116.0
+offset_bottom = -10.0
+text = "Lengua de serpientes: Python
+ Enter/Espacio "
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Nivel5/Area2D"]
 position = Vector2(0, 32)
 shape = SubResource("CircleShape2D_kkfvo")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Nivel5/Area2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_kconx")
+}
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -882,14 +918,14 @@ autoplay = "default"
 position = Vector2(-19.475, 483)
 
 [node name="Visual" type="AnimatedSprite2D" parent="Arbol"]
-position = Vector2(660.475, -108)
+position = Vector2(667.475, -107)
 scale = Vector2(4.55, 4)
 sprite_frames = SubResource("SpriteFrames_tree")
 autoplay = "default"
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 z_index = 1
-position = Vector2(624, 616)
+position = Vector2(616, 586)
 script = ExtResource("7_ykhg3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
@@ -901,7 +937,7 @@ animation = &"walk_down"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(1, 55)
+position = Vector2(0, 56)
 shape = SubResource("CapsuleShape2D_lkwsl")
 
 [node name="Montaña1" type="StaticBody2D" parent="."]
@@ -919,22 +955,22 @@ position = Vector2(1343, 431)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Montaña2"]
 position = Vector2(-544, 83)
-polygon = PackedVector2Array(1, -2, 9, -18, 25, -42, 49, -58, 89, -66, 129, -74, 185, -82, 257, -90, 297, -98, 457, -90, 505, -90, 529, -82, 545, -82, 545, 118, 505, 126, 457, 134, 401, 142, 281, 110, 233, 102, 145, 94, 137, 102, 121, 102, 89, 94, 81, 70, 57, 62, 41, 70, 33, 78, 49, 78, 57, 70, 81, 94, 113, 110, 401, 150, 545, 126, 553, 126, 553, -90, 505, -98, 449, -98, 297, -106, 225, -90, 161, -82, 97, -74, 25, -58, -15, -26, -15, -2)
+polygon = PackedVector2Array(9, -10, 9, -18, 25, -42, 49, -58, 89, -66, 129, -74, 185, -82, 257, -90, 297, -98, 457, -90, 505, -90, 529, -82, 545, -82, 545, 118, 505, 126, 457, 134, 401, 142, 281, 110, 233, 102, 145, 94, 137, 102, 121, 102, 89, 94, 81, 70, 57, 62, 41, 70, 33, 78, 49, 78, 57, 70, 81, 94, 113, 110, 401, 150, 545, 126, 553, 126, 553, -90, 505, -98, 449, -98, 297, -106, 225, -90, 161, -82, 97, -74, 25, -58, -15, -26, -15, -18)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Montaña2"]
 position = Vector2(-543, 81)
-polygon = PackedVector2Array(-16, 24, 0, 56, 24, 64, 40, 72, 32, 80, 0, 64, -16, 40, -24, 24)
+polygon = PackedVector2Array(-8, 40, 0, 56, 24, 64, 24, 64, 16, 72, 0, 64, -16, 56, -16, 48)
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Montaña2"]
 position = Vector2(-559, 81)
-polygon = PackedVector2Array(0, 0, 8, 24, 16, 24, 16, 0)
+polygon = PackedVector2Array(-8, 0, 8, 24, 16, 24, 24, -8)
 
 [node name="Montaña3" type="StaticBody2D" parent="."]
 position = Vector2(-64, 392)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Montaña3"]
 position = Vector2(0, -7)
-polygon = PackedVector2Array(0, -1, 40, -1, 120, -17, 280, -9, 352, -1, 352, 15, 304, -1, 120, -9, 40, 7, 0, 7, 0, 191, 152, 215, 232, 207, 264, 199, 312, 191, 328, 183, 360, 183, 384, 183, 440, 191, 464, 191, 504, 199, 536, 191, 576, 175, 592, 159, 600, 151, 608, 159, 576, 191, 504, 215, 72, 231, -8, 215, -8, -1)
+polygon = PackedVector2Array(0, -1, 40, -1, 120, -17, 280, -9, 352, -1, 352, 15, 304, -1, 120, -9, 40, 7, 0, 7, 0, 191, 152, 215, 232, 207, 264, 199, 312, 191, 328, 183, 360, 183, 384, 183, 440, 191, 464, 191, 504, 199, 536, 191, 576, 175, 592, 159, 600, 159, 608, 159, 576, 191, 504, 215, 72, 231, -8, 215, -8, -1)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Montaña3"]
 position = Vector2(568, 88)
@@ -985,11 +1021,11 @@ texture = ExtResource("15_yqu4s")
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="Puentes/puente1-2/StaticBody2D"]
 position = Vector2(776, 640)
-polygon = PackedVector2Array(0, 0, 8, -8, 16, -8, 24, -40, 64, -80, 72, -80, 64, -56, 48, -24, 16, 0)
+polygon = PackedVector2Array(0, 0, 8, -8, 16, -8, 0, -8, 32, -40, 64, -80, 72, -80, 64, -56, 48, -24, 16, 0)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Puentes/puente1-2/StaticBody2D"]
 position = Vector2(728, 624)
-polygon = PackedVector2Array(0, 0, 0, -8, 32, -24, 56, -56, 72, -88, 64, -88, 56, -72, 16, -32, -8, -24, -8, 0)
+polygon = PackedVector2Array(0, 0, 0, -8, 32, -24, 56, -56, 64, -80, 64, -80, 32, -72, 16, -32, -8, -24, -8, 0)
 
 [node name="puente2-3" type="Node2D" parent="Puentes"]
 
@@ -1004,11 +1040,11 @@ scale = Vector2(4.55, 4)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Puentes/puente2-3/StaticBody2D"]
 position = Vector2(33.846146, 42.25)
-polygon = PackedVector2Array(0, 0, -10.549438, 2, -21.098892, 4, -31.648346, 6, -33.406586, 6, -36.923065, 6, -42.1978, 4, -49.23076, 2, -56.263725, 0, -65.05493, -2, -65.05493, 0, -36.923065, 10, -28.131866, 10, 0, 2)
+polygon = PackedVector2Array(-5.274719, 2, -10.549438, 2, -21.098892, 4, -31.648346, 6, -33.406586, 6, -36.923065, 6, -42.1978, 4, -49.23076, 2, -56.263725, 2, -65.05493, 0, -65.05493, 2, -36.923065, 10, -28.131866, 10, 0, 2)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Puentes/puente2-3/StaticBody2D"]
-position = Vector2(32.08791, 36.25)
-polygon = PackedVector2Array(0, 0, -15.824173, 2, -24.615387, 4, -33.406586, 4, -49.23076, 0, -59.780212, -2, -61.538452, -10, -29.890106, 2, -12.3076935, 0, 0, -2)
+position = Vector2(32.08791, 35)
+polygon = PackedVector2Array(5.2747345, -0.75, -7.032959, -0.75, -15.824173, 1.25, -24.615387, 1.25, -36.923065, 1.25, -49.23076, -0.75, -56.263733, -0.75, -59.780212, -4.75, -61.538452, -8.75, -29.890106, -2.75, -12.3076935, -4.75, 0, -4)
 
 [node name="puente3-4" type="Node2D" parent="Puentes"]
 
@@ -1037,8 +1073,8 @@ texture = ExtResource("18_cjh4u")
 [node name="StaticBody2D" type="StaticBody2D" parent="Puentes/puente4-5"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Puentes/puente4-5/StaticBody2D"]
-position = Vector2(592, 344)
-polygon = PackedVector2Array(0, 0, 8, 16, 88, 16, 112, -24, 96, -32, 8, -8)
+position = Vector2(592, 340)
+polygon = PackedVector2Array(0, 0, 8, 8, 88, 8, 112, -24, 96, -32, 8, -8)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Puentes/puente4-5/StaticBody2D"]
 position = Vector2(568, 408)
