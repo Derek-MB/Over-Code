@@ -1,9 +1,8 @@
-[gd_resource type="SpriteFrames" load_steps=30 format=3 uid="uid://dhej5nryb2i2v"]
+[gd_resource type="SpriteFrames" load_steps=26 format=3 uid="uid://dhej5nryb2i2v"]
 
 [ext_resource type="Texture2D" uid="uid://cqaawtic2584s" path="res://Assets/Art/Characters/girl_bloque.png" id="1_3lwir"]
 [ext_resource type="Texture2D" uid="uid://07k7t66y0bnc" path="res://Assets/Art/Characters/girl_idle.png" id="1_w0dof"]
 [ext_resource type="Texture2D" uid="uid://dsoq4kme0222m" path="res://Assets/Art/Characters/girl-idle-level.png" id="2_7q1dy"]
-[ext_resource type="Texture2D" uid="uid://bc2h2r80qldh7" path="res://Assets/Art/Characters/girl-iddle-bloque.png" id="2_ge31c"]
 [ext_resource type="Texture2D" uid="uid://8rjl4324rk8m" path="res://Assets/Art/Characters/girl_walk_down.png" id="2_k25yu"]
 [ext_resource type="Texture2D" uid="uid://4bu55jsgh0qr" path="res://Assets/Art/Characters/girl_walk_up.png" id="3_ppjpt"]
 [ext_resource type="Texture2D" uid="uid://v7h5c2ypplmf" path="res://Assets/Art/Characters/girl-walking-Sheet.png" id="5_hk5xx"]
@@ -23,18 +22,6 @@ region = Rect2(64, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_vt0em"]
 atlas = ExtResource("1_3lwir")
 region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2eqpv"]
-atlas = ExtResource("2_ge31c")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_j4kct"]
-atlas = ExtResource("2_ge31c")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_drttx"]
-atlas = ExtResource("2_ge31c")
-region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_isqt8"]
 atlas = ExtResource("1_w0dof")
@@ -115,16 +102,7 @@ animations = [{
 "name": &"agarrar_bloque",
 "speed": 5.0
 }, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2eqpv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_j4kct")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_drttx")
-}],
+"frames": [],
 "loop": true,
 "name": &"agarrar_bloque_idle",
 "speed": 5.0

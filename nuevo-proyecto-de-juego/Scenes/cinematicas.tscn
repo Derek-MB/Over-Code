@@ -102,10 +102,10 @@ autowrap_mode = 3
 
 [node name="Prompt" type="Label" parent="."]
 layout_mode = 0
-offset_left = 484.0
-offset_top = 655.0
-offset_right = 924.0
-offset_bottom = 690.0
+offset_left = 522.0
+offset_top = 656.0
+offset_right = 962.0
+offset_bottom = 691.0
 theme_override_fonts/font = ExtResource("11_kia4q")
 theme_override_font_sizes/font_size = 12
 text = "Oprime cualquier tecla"

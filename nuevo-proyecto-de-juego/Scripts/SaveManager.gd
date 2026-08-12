@@ -4,10 +4,12 @@ const SAVE_PATH = "user://slot_"
 
 var current_slot = 0
 var current_slot_data = {}
+var play_time_seconds := 0
+var _session_started_at := 0
 
 
 func _ready() -> void:
-    pass
+    _session_started_at = Time.get_unix_time_from_system()
 
 
 # Seleccionar slot y cargar datos
@@ -34,8 +36,12 @@ func load_slot(slot):
         current_slot_data = {
             "nuevo": true,
             "personaje": null,
-            "progreso": 0
+            "progreso": 0,
+            "play_time_seconds": 0
         }
+
+    play_time_seconds = int(current_slot_data.get("play_time_seconds", 0))
+    _session_started_at = Time.get_unix_time_from_system()
 
 
     # Restaurar personaje
@@ -47,11 +53,24 @@ func load_slot(slot):
 # Guardar slot
 func save_slot(slot):
 
+    _actualizar_tiempo_jugado()
+    current_slot_data["play_time_seconds"] = play_time_seconds
+
     var path = "user://slot_%d.save" % slot
 
     var file = FileAccess.open(path, FileAccess.WRITE)
 
     file.store_string(JSON.stringify(current_slot_data))
+
+    if Supabase.is_signed_in() and slot > 0:
+        Supabase.sync_save_slot(slot, current_slot_data, play_time_seconds)
+
+
+func _actualizar_tiempo_jugado() -> void:
+
+    var now := Time.get_unix_time_from_system()
+    play_time_seconds += maxi(0, now - _session_started_at)
+    _session_started_at = now
 
 
 func delete_slot(slot):

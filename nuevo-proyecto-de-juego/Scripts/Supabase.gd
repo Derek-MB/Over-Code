@@ -105,6 +105,51 @@ func update_my_profile(changes: Dictionary) -> Dictionary:
     )
 
 
+func sync_save_slot(slot_number: int, slot_data: Dictionary, play_time_seconds: int) -> Dictionary:
+
+    if not is_signed_in():
+        return {"ok": false, "message": "No hay una sesión iniciada."}
+
+    var progreso := clampi(int(slot_data.get("progreso", 0)), 0, 5)
+    var current_level := mini(progreso + 1, 5)
+    var payload := {
+        "user_id": user_id,
+        "slot_number": slot_number,
+        "slot_name": str(slot_data.get("nombre", "")),
+        "world_name": _world_name_for_level(current_level),
+        "current_level": current_level,
+        "highest_unlocked_level": current_level,
+        "play_time_seconds": play_time_seconds,
+        "game_version": "1.0.0",
+        "game_state": slot_data,
+        "last_played_at": Time.get_datetime_string_from_system(true)
+    }
+
+    var save_result := await _request_json(
+        "/rest/v1/save_slots?on_conflict=user_id,slot_number",
+        HTTPClient.METHOD_POST,
+        payload,
+        true,
+        {"Prefer": "resolution=merge-duplicates,return=representation"}
+    )
+
+    if not save_result.get("ok", false):
+        return save_result
+
+    return await update_my_profile({
+        "current_level": current_level,
+        "highest_unlocked_level": current_level,
+        "progress": (float(progreso) / 5.0) * 100.0,
+        "play_time_seconds": play_time_seconds
+    })
+
+
+func _world_name_for_level(level: int) -> String:
+
+    var worlds := ["HTML", "CSS", "JavaScript", "Python", "Final"]
+    return worlds[clampi(level, 1, worlds.size()) - 1]
+
+
 func load_leaderboard() -> Dictionary:
 
     return await _request_json(

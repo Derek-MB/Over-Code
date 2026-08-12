@@ -33,4 +33,7 @@ func completar_nivel() -> void:
     if nivel_id < 5:
         SaveManager.current_slot_data["puente_%d_desbloqueado" % nivel_id] = true
     SaveManager.save_slot(SaveManager.current_slot)
-    TransitionManager.cambiar_escena("res://Scenes/mapa.tscn")
+    if nivel_id == 5:
+        TransitionManager.cambiar_escena("res://Scenes/Creditos.tscn")
+    else:
+        TransitionManager.cambiar_escena("res://Scenes/mapa.tscn")

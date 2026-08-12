@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=4 uid="uid://bqmxgf6buq7ni"]
+[gd_scene load_steps=70 format=4 uid="uid://bqmxgf6buq7ni"]
 
 [ext_resource type="Texture2D" uid="uid://cc5efjbv5t15t" path="res://Assets/Art/World/ground.png" id="1_3givb"]
 [ext_resource type="Script" uid="uid://dwma45k6g5jsv" path="res://Scripts/jugador.gd" id="2_ecx5m"]
@@ -388,12 +388,92 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Animation" id="Animation_yj0hd"]
+[sub_resource type="Animation" id="Animation_3xy45"]
 resource_name = "volar_punto_1"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(250, 395), Vector2(918, 304)]
+}
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_u5pjp"]
+[sub_resource type="Animation" id="Animation_kabt5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(250, 395)]
+}
+
+[sub_resource type="Animation" id="Animation_8da1u"]
+resource_name = "volar_punto_2"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(918, 304), Vector2(1899, 480)]
+}
+
+[sub_resource type="Animation" id="Animation_hkimd"]
+resource_name = "volar_punto_3"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1891, 475), Vector2(1467, 479)]
+}
+
+[sub_resource type="Animation" id="Animation_mfxdf"]
+resource_name = "volar_punto_4"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1459, 480), Vector2(2443, 477)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_moqox"]
 _data = {
-&"volar_punto_1": SubResource("Animation_yj0hd")
+&"RESET": SubResource("Animation_kabt5"),
+&"volar_punto_1": SubResource("Animation_3xy45"),
+&"volar_punto_2": SubResource("Animation_8da1u"),
+&"volar_punto_3": SubResource("Animation_hkimd"),
+&"volar_punto_4": SubResource("Animation_mfxdf")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_barrera_puzzle"]
@@ -535,8 +615,8 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="HojaCodigo" type="AnimatedSprite2D" parent="."]
-position = Vector2(1275.5, 400.23367)
-scale = Vector2(3.119566, 3.119566)
+position = Vector2(1275.5, 410.8859)
+scale = Vector2(3.119566, 2.908631)
 sprite_frames = SubResource("SpriteFrames_3xy45")
 autoplay = "default"
 
@@ -546,7 +626,7 @@ scale = Vector2(2.1000035, 2.1186883)
 sprite_frames = SubResource("SpriteFrames_evhcb")
 animation = &"incompleta"
 autoplay = "incompleta"
-frame_progress = 0.19253787
+frame_progress = 0.370465
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(651, 475)
@@ -753,8 +833,8 @@ anchor_left = -0.35900003
 anchor_top = -2.055
 anchor_right = -0.35900003
 anchor_bottom = -2.055
-offset_left = 43.795
-offset_top = 17.0
+offset_left = 33.158638
+offset_top = 8.0
 offset_right = 147.795
 offset_bottom = 105.0
 mouse_filter = 2
@@ -767,23 +847,24 @@ anchor_left = -0.347
 anchor_top = -2.071
 anchor_right = -0.347
 anchor_bottom = -2.071
-offset_left = 58.735
-offset_top = 27.0
-offset_right = 137.735
-offset_bottom = 73.0
+offset_left = 35.735
+offset_top = 14.0
+offset_right = 144.735
+offset_bottom = 66.0
 theme_override_fonts/font = ExtResource("9_ql53f")
 theme_override_font_sizes/font_size = 6
-autowrap_mode = 2
+horizontal_alignment = 1
+autowrap_mode = 3
 
 [node name="Timer" type="Timer" parent="RobotNivel"]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="RobotNivel"]
 libraries = {
-&"": SubResource("AnimationLibrary_u5pjp")
+&"": SubResource("AnimationLibrary_moqox")
 }
 
 [node name="BloqueCodigo" parent="." instance=ExtResource("22_5iadn")]
-position = Vector2(363, 544)
+position = Vector2(371, 540)
 codigo_texto = "print("
 
 [node name="BloqueCodigo2" parent="." instance=ExtResource("22_5iadn")]
@@ -792,7 +873,7 @@ orden_correcto = 2
 codigo_texto = "\"Hello World\""
 
 [node name="BloqueCodigo3" parent="." instance=ExtResource("22_5iadn")]
-position = Vector2(771, 376)
+position = Vector2(755, 368)
 orden_correcto = 3
 codigo_texto = ")"
 
@@ -812,7 +893,7 @@ position = Vector2(2078.5, 278.5)
 scale = Vector2(3.28125, 5.47)
 sprite_frames = SubResource("SpriteFrames_fv2k8")
 autoplay = "default"
-frame_progress = 0.639414
+frame_progress = 0.9411659
 
 [connection signal="body_entered" from="Meta" to="Meta" method="_on_body_entered"]
 [connection signal="body_exited" from="Meta" to="Meta" method="_on_body_exited"]

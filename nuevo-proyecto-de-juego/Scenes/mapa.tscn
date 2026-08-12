@@ -721,8 +721,12 @@ offset_left = 1123.0
 offset_top = 346.0
 offset_right = 1280.0
 offset_bottom = 402.0
+theme_override_fonts/font = ExtResource("7_yq38d")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_1lxf8")
 text = "La estructura: HTML
  Enter/Espacio "
+horizontal_alignment = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Nivel2/Area2D"]
 position = Vector2(1202.0001, 440.99994)
@@ -753,8 +757,12 @@ offset_left = 615.0
 offset_top = 488.0
 offset_right = 782.0
 offset_bottom = 547.0
+theme_override_fonts/font = ExtResource("7_yq38d")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_1lxf8")
 text = "¿Estilo.. cascada?: CSS
  Enter/Espacio "
+horizontal_alignment = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Nivel3/Area2D"]
 position = Vector2(702, 583)
@@ -784,8 +792,12 @@ offset_left = 632.0
 offset_top = 494.0
 offset_right = 775.0
 offset_bottom = 543.0
+theme_override_fonts/font = ExtResource("7_yq38d")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_1lxf8")
 text = "NaN: Not a Null: JS
  Enter/Espacio "
+horizontal_alignment = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Nivel4/Area2D"]
 position = Vector2(702, 588)
@@ -815,8 +827,12 @@ offset_left = -113.0
 offset_top = -59.0
 offset_right = 116.0
 offset_bottom = -10.0
+theme_override_fonts/font = ExtResource("7_yq38d")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_1lxf8")
 text = "Lengua de serpientes: Python
  Enter/Espacio "
+horizontal_alignment = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Nivel5/Area2D"]
 position = Vector2(0, 32)
