@@ -272,4 +272,7 @@ func _on_timer_timeout():
 
 
 func _on_button_2_pressed() -> void:
-    TransitionManager.cambiar_escena("res://Scenes/mapa.tscn")
+    var return_scene: String = Global.level_return_scene
+    if return_scene.is_empty():
+        return_scene = "res://Scenes/mapa.tscn"
+    TransitionManager.cambiar_escena(return_scene)

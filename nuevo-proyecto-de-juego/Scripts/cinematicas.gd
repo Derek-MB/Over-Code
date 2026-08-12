@@ -13,7 +13,7 @@ var escenas = [
         "texto": "Por lo que te preparas y decides salir deprisa para ayudarlo"
     },
     {
-        "imagen": preload("res://Assets/Art/Interface/title_frame_2.png"),
+        "imagen": preload("res://Assets/Art/Cinematics/Sprite-0001-100tifiko con Bigotes (cinematica).png"),
         "texto": "Al llegar,vez a Migotes, su gato, tocando las teclas de la computadora, lo que ocaciona un error en la maquina"
     }
 ]
@@ -25,6 +25,7 @@ var terminando_intro = false
 
 @onready var imagen = $Fondo
 @onready var texto = $Label
+@onready var prompt: Label = $Prompt
 
 
 func _ready():
@@ -35,11 +36,18 @@ func _ready():
         escenas[1]["imagen"] = CINEMATICA_CHICO
 
     actualizar_cinematica()
+    crear_parpadeo()
 
 
 func actualizar_cinematica():
     imagen.texture = escenas[indice]["imagen"]
     mostrar_texto(escenas[indice]["texto"])
+
+
+func crear_parpadeo() -> void:
+    var tween := create_tween().set_loops()
+    tween.tween_property(prompt, "modulate:a", 0.28, 1.0)
+    tween.tween_property(prompt, "modulate:a", 1.0, 1.0)
 
 
 func mostrar_texto(nuevo_texto):

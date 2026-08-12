@@ -34,7 +34,8 @@ func _on_si_pressed():
     SaveManager.current_slot_data["nuevo"] = false
     
     SaveManager.save_slot(SaveManager.current_slot)
-    
+    # Desde la personalización, la introducción retoma el flujo original: mapa.
+    Global.cinematic_return_scene = "res://Scenes/mapa.tscn"
     TransitionManager.cambiar_escena("res://Scenes/cinematicas.tscn")
 
 

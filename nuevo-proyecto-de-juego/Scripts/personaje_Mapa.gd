@@ -51,19 +51,19 @@ func _physics_process(_delta):
         # IDLE DERECHA/IZQUIERDA
         if abs(last_direction.x) > abs(last_direction.y):
 
-            if sprite.animation != "idle_side":
-                sprite.play("idle_side")
+            if sprite.animation != "idle":
+                sprite.play("idle_level")
 
         # IDLE ABAJO
         elif last_direction.y > 0:
 
-            if sprite.animation != "idle_down":
+            if sprite.animation != "idle":
                 sprite.play("idle")
 
         # IDLE ARRIBA
         elif last_direction.y < 0:
 
-            if sprite.animation != "idle_up":
+            if sprite.animation != "idle":
                 sprite.play("idle")
 
     else:
@@ -73,8 +73,8 @@ func _physics_process(_delta):
 
             sprite.flip_h = false
 
-            if sprite.animation != "walk_side":
-                sprite.play("walk_side")
+            if sprite.animation != "walking":
+                sprite.play("walking")
 
 
         # IZQUIERDA
@@ -82,8 +82,8 @@ func _physics_process(_delta):
 
             sprite.flip_h = true
 
-            if sprite.animation != "walk_side":
-                sprite.play("walk_side")
+            if sprite.animation != "walking":
+                sprite.play("walking")
 
 
         # ABAJO

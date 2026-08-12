@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://5or7blq2mubw"]
+[gd_scene load_steps=19 format=3 uid="uid://5or7blq2mubw"]
 
 [ext_resource type="Texture2D" uid="uid://ddboffungdf1q" path="res://Assets/Art/Backgrounds/sky.png" id="2_wbdvm"]
 [ext_resource type="Shader" uid="uid://dkanji6jcgpd0" path="res://Shaders/movimientoNubes.gdshader" id="3_q3rjx"]
@@ -8,24 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://blgjlhftxngn5" path="res://Assets/Art/Backgrounds/mountains_back.png" id="6_wbdvm"]
 [ext_resource type="Texture2D" uid="uid://dwhli5cfyqot0" path="res://Assets/Art/Interface/title_frame_1.png" id="7_6swd7"]
 [ext_resource type="Texture2D" uid="uid://c1firc88fpvua" path="res://Assets/Art/Interface/title_frame_2.png" id="8_7qvly"]
-[ext_resource type="Script" path="res://Scripts/menu.gd" id="9_menu"]
-
-[sub_resource type="GDScript" id="GDScript_q3rjx"]
-script/source = "extends Control
-
-
-
-func _on_jugar_pressed() -> void:
-    TransitionManager.cambiar_escena(\"res://Scenes/jugar.tscn\")
-
-func _on_opciones_pressed() -> void:
-    Global.opciones_return_scene = \"res://Scenes/menu.tscn\"
-    TransitionManager.cambiar_escena(\"res://Scenes/opciones.tscn\")
-
-
-func _on_salir_pressed() -> void:
-    get_tree().quit()
-"
+[ext_resource type="Script" uid="uid://csvamprdqb3qi" path="res://Scripts/menu.gd" id="9_menu"]
+[ext_resource type="Texture2D" uid="uid://55betaeqco0" path="res://Assets/Art/Interface/Correo.png" id="10_correo"]
+[ext_resource type="Texture2D" uid="uid://b4s4tu7axpwvq" path="res://Assets/Art/Interface/sign.png" id="11_signo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g8i7c"]
 shader = ExtResource("3_q3rjx")
@@ -37,8 +22,37 @@ shader = ExtResource("5_7qvly")
 frames = 2
 speed_scale = -8.0
 frame_0/texture = ExtResource("7_6swd7")
+frame_0/duration = 0.55
 frame_1/texture = ExtResource("8_7qvly")
-frame_1/duration = 1.0
+frame_1/duration = 0.55
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_si"]
+bg_color = Color(0.7738557, 7.70092e-07, 5.7756904e-07, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_si_hover"]
+bg_color = Color(0.56609225, 1.3837591e-06, 3.3691526e-07, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_no"]
+bg_color = Color(0.016632833, 0.3695544, 0.5415818, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_no_hover"]
+bg_color = Color(0.045716114, 0.53670007, 0.77654856, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -129,6 +143,127 @@ theme_override_fonts/font = ExtResource("3_wwsa2")
 theme_override_font_sizes/font_size = 20
 text = "Salir"
 
+[node name="CerrarSesion" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.041
+anchor_top = 0.84300005
+anchor_right = 0.117000006
+anchor_bottom = 0.93600005
+offset_left = 0.51999664
+offset_top = 0.039978027
+offset_right = 0.068847656
+offset_bottom = 0.079956055
+grow_horizontal = 0
+grow_vertical = 0
+tooltip_text = "Cerrar sesión"
+icon = ExtResource("10_correo")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="PanelConfirmacion" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -437.0
+offset_top = -166.0
+offset_right = 437.0
+offset_bottom = 166.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelConfirmacion"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -464.25
+offset_top = -269.375
+offset_right = 464.25
+offset_bottom = 269.375
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("11_signo")
+
+[node name="Label" type="Label" parent="PanelConfirmacion"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -308.0
+offset_top = -132.0
+offset_right = 308.0
+offset_bottom = -76.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_wwsa2")
+theme_override_font_sizes/font_size = 20
+text = "¿Deseas cerrar sesión?"
+horizontal_alignment = 1
+
+[node name="si" type="Button" parent="PanelConfirmacion"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.317
+anchor_top = 0.71800005
+anchor_right = 0.317
+anchor_bottom = 0.71800005
+offset_left = -60.058014
+offset_top = -39.376022
+offset_right = 59.941986
+offset_bottom = 39.623978
+theme_override_fonts/font = ExtResource("3_wwsa2")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_si")
+theme_override_styles/hover = SubResource("StyleBoxFlat_si_hover")
+text = "Si"
+
+[node name="no" type="Button" parent="PanelConfirmacion"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.67600006
+anchor_top = 0.72
+anchor_right = 0.67600006
+anchor_bottom = 0.72
+offset_left = -59.824036
+offset_top = -40.04001
+offset_right = 60.175964
+offset_bottom = 39.95999
+theme_override_fonts/font = ExtResource("3_wwsa2")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_no")
+theme_override_styles/hover = SubResource("StyleBoxFlat_no_hover")
+text = "No"
+
+[node name="Fade" type="ColorRect" parent="."]
+visible = false
+modulate = Color(0.007843138, 0.007843138, 0.007843138, 1)
+self_modulate = Color(0.007843138, 0.007843138, 0.007843138, 1)
+z_index = 100
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0.02745098, 1)
+
 [connection signal="pressed" from="BoxContainer/Jugar" to="." method="_on_jugar_pressed"]
 [connection signal="pressed" from="BoxContainer/Opciones" to="." method="_on_opciones_pressed"]
 [connection signal="pressed" from="BoxContainer/Salir" to="." method="_on_salir_pressed"]
+[connection signal="mouse_entered" from="CerrarSesion" to="." method="_on_cerrar_sesion_mouse_entered"]
+[connection signal="mouse_exited" from="CerrarSesion" to="." method="_on_cerrar_sesion_mouse_exited"]
+[connection signal="pressed" from="CerrarSesion" to="." method="_on_cerrar_sesion_pressed"]
+[connection signal="pressed" from="PanelConfirmacion/si" to="." method="_on_si_pressed"]
+[connection signal="pressed" from="PanelConfirmacion/no" to="." method="_on_no_pressed"]

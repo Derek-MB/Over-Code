@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c3jtedf14ta24"]
+[gd_scene load_steps=32 format=3 uid="uid://c3jtedf14ta24"]
 
 [ext_resource type="Script" uid="uid://biypg0i4bdfn2" path="res://Scripts/SlotsMenu.gd" id="1_6e1jg"]
 [ext_resource type="Texture2D" uid="uid://ddboffungdf1q" path="res://Assets/Art/Backgrounds/sky.png" id="1_pf3b0"]
@@ -9,12 +9,106 @@
 [ext_resource type="FontFile" uid="uid://baaqbul0ssy6w" path="res://Assets/Fonts/Pixeled.ttf" id="7_jukjc"]
 [ext_resource type="Texture2D" uid="uid://b41hpwq7dta2u" path="res://Assets/Art/Interface/delete.png" id="8_oi125"]
 [ext_resource type="Texture2D" uid="uid://b4s4tu7axpwvq" path="res://Assets/Art/Interface/sign.png" id="9_gvw04"]
+[ext_resource type="Texture2D" uid="uid://c25ps8hnto388" path="res://Assets/Art/Interface/clouds-Sheet.png" id="9_ku6up"]
+[ext_resource type="Script" uid="uid://j2v6oru5cwed" path="res://Scenes/nube.gd" id="10_3f2pq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gvw04"]
 shader = ExtResource("2_5wcc6")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ku6up"]
 shader = ExtResource("4_jukjc")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3nt38"]
+atlas = ExtResource("9_ku6up")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8c4n5"]
+atlas = ExtResource("9_ku6up")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_todes"]
+atlas = ExtResource("9_ku6up")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3n7wy"]
+atlas = ExtResource("9_ku6up")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6wc7m"]
+atlas = ExtResource("9_ku6up")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tp364"]
+atlas = ExtResource("9_ku6up")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3oip"]
+atlas = ExtResource("9_ku6up")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3nxoy"]
+atlas = ExtResource("9_ku6up")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ci2sf"]
+atlas = ExtResource("9_ku6up")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ufxj"]
+atlas = ExtResource("9_ku6up")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ae65b"]
+atlas = ExtResource("9_ku6up")
+region = Rect2(640, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13w7p"]
+atlas = ExtResource("9_ku6up")
+region = Rect2(704, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_og6d7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3nt38")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8c4n5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_todes")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3n7wy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6wc7m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tp364")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3oip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3nxoy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ci2sf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ufxj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ae65b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_13w7p")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3nt38"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -116,10 +210,10 @@ anchor_left = 0.5
 anchor_top = 0.455
 anchor_right = 0.5
 anchor_bottom = 0.455
-offset_left = -364.75
-offset_top = -165.84
-offset_right = 368.25
-offset_bottom = 166.16
+offset_left = -405.0
+offset_top = -165.6
+offset_right = 408.0
+offset_bottom = 166.4
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 120
@@ -129,15 +223,57 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("7_jukjc")
 text = "   Guardado 1   "
 
+[node name="Decoracion" type="Control" parent="VBoxContainer/Slot 1"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="nube" type="AnimatedSprite2D" parent="VBoxContainer/Slot 1/Decoracion"]
+position = Vector2(90.50003, 164.5)
+scale = Vector2(3.7968752, 5.9531236)
+sprite_frames = SubResource("SpriteFrames_og6d7")
+autoplay = "default"
+frame = 11
+frame_progress = 1.0
+script = ExtResource("10_3f2pq")
+
 [node name="Slot 2" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("7_jukjc")
 text = "   Guardado 2   "
 
+[node name="Decoracion" type="Control" parent="VBoxContainer/Slot 2"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="nube2" type="AnimatedSprite2D" parent="VBoxContainer/Slot 2/Decoracion"]
+position = Vector2(101.50014, 164.5)
+scale = Vector2(3.7968752, 5.9531236)
+sprite_frames = SubResource("SpriteFrames_og6d7")
+autoplay = "default"
+frame = 11
+frame_progress = 1.0
+script = ExtResource("10_3f2pq")
+
 [node name="Slot 3" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("7_jukjc")
 text = "   Guardado 3   "
+
+[node name="Decoracion" type="Control" parent="VBoxContainer/Slot 3"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="nube3" type="AnimatedSprite2D" parent="VBoxContainer/Slot 3/Decoracion"]
+position = Vector2(98.50012, 164.5)
+scale = Vector2(3.7968752, 5.9531236)
+sprite_frames = SubResource("SpriteFrames_og6d7")
+autoplay = "default"
+frame = 11
+frame_progress = 1.0
+script = ExtResource("10_3f2pq")
 
 [node name="Borrar" type="Button" parent="."]
 layout_mode = 1

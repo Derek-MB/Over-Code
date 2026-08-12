@@ -1,10 +1,20 @@
-[gd_scene load_steps=8 format=3 uid="uid://sbu3kdq3estf"]
+[gd_scene load_steps=14 format=3 uid="uid://sbu3kdq3estf"]
 
 [ext_resource type="Script" uid="uid://k3cf7h2sgeet" path="res://Scripts/login.gd" id="1_script"]
 [ext_resource type="FontFile" uid="uid://baaqbul0ssy6w" path="res://Assets/Fonts/Pixeled.ttf" id="2_font"]
 [ext_resource type="Shader" uid="uid://srx1g0mexdd" path="res://Shaders/code_Simbols.gdshader" id="3_5iow8"]
+[ext_resource type="Shader" uid="uid://dkanji6jcgpd0" path="res://Shaders/movimientoNubes.gdshader" id="3_dpd3p"]
 [ext_resource type="Texture2D" uid="uid://ddboffungdf1q" path="res://Assets/Art/Backgrounds/sky.png" id="3_sky"]
 [ext_resource type="Texture2D" uid="uid://y4wf2ahlrb8h" path="res://Assets/Art/Interface/character_selection_background.png" id="4_88cqn"]
+[ext_resource type="Texture2D" uid="uid://4olivh7yjon7" path="res://Assets/Art/Backgrounds/mountains_front.png" id="4_qrbpq"]
+[ext_resource type="Shader" uid="uid://b3f0mo46q6dp8" path="res://Shaders/movimientoMontañas.gdshader" id="5_d8m4u"]
+[ext_resource type="Texture2D" uid="uid://blgjlhftxngn5" path="res://Assets/Art/Backgrounds/mountains_back.png" id="6_5ysxf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a5vrk"]
+shader = ExtResource("3_dpd3p")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0apk8"]
+shader = ExtResource("5_d8m4u")
 
 [sub_resource type="StyleBoxFlat" id="StyleBox_panel"]
 bg_color = Color(0.055, 0.078, 0.16, 0.94)
@@ -32,7 +42,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_script")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="fondo" type="TextureRect" parent="."]
+texture_repeat = 2
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -40,8 +51,28 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_sky")
-expand_mode = 1
-stretch_mode = 6
+
+[node name="nubes" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_a5vrk")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_qrbpq")
+
+[node name="montañas" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_0apk8")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_5ysxf")
 
 [node name="Center" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -86,7 +117,7 @@ horizontal_alignment = 1
 [node name="Subtitle" type="Label" parent="Center/Panel/Margin/Content"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_font")
-theme_override_font_sizes/font_size = 11
+theme_override_font_sizes/font_size = 14
 text = "Tu progreso se guardara en tu cuenta"
 horizontal_alignment = 1
 autowrap_mode = 2

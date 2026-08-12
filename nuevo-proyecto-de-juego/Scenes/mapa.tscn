@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=3 uid="uid://c8xdfgfadkqvv"]
+[gd_scene load_steps=108 format=3 uid="uid://c8xdfgfadkqvv"]
 
 [ext_resource type="Texture2D" uid="uid://bpgjolounvrv1" path="res://Assets/Art/World/world_map.png" id="1_goa42"]
 [ext_resource type="Script" uid="uid://bac3vreya4lye" path="res://Scripts/mapa.gd" id="1_v43pt"]
@@ -10,14 +10,18 @@
 [ext_resource type="Script" uid="uid://cvwt8c2nrbhmm" path="res://Scripts/entrar_Nivel1.gd" id="5_lkwsl"]
 [ext_resource type="Script" uid="uid://bcvkjfou1uf8w" path="res://Scripts/personaje_Mapa.gd" id="7_ykhg3"]
 [ext_resource type="FontFile" uid="uid://baaqbul0ssy6w" path="res://Assets/Fonts/Pixeled.ttf" id="7_yq38d"]
-[ext_resource type="SpriteFrames" uid="uid://dhej5nryb2i2v" path="res://Assets/Animations/girl_frames.tres" id="10_yq38d"]
 [ext_resource type="Texture2D" uid="uid://cweuufdiqbo4b" path="res://Assets/Art/Characters/Robot/robot_head_idle.png" id="11_1lxf8"]
 [ext_resource type="Texture2D" uid="uid://bjulsahabrt5s" path="res://Assets/Art/Characters/Robot/robot_head_talk.png" id="11_nl0av"]
 [ext_resource type="Texture2D" uid="uid://co5nkcy0n0bxi" path="res://Assets/Art/World/Foreground/world_map parts-Sheet pilares.png" id="13_pilares"]
 [ext_resource type="Texture2D" uid="uid://duy8mxoftu0lu" path="res://Assets/Art/Interface/menu.png" id="14_604li"]
+[ext_resource type="SpriteFrames" uid="uid://t7iye4p5rs18" path="res://Assets/Animations/boy_frames.tres" id="14_ljoby"]
 [ext_resource type="Texture2D" uid="uid://b4s4tu7axpwvq" path="res://Assets/Art/Interface/sign.png" id="15_menu"]
+[ext_resource type="Texture2D" uid="uid://deem7vrlxy1pt" path="res://Assets/Art/World/puente 1-2.png" id="15_yqu4s"]
+[ext_resource type="Texture2D" uid="uid://4r6qr5weuath" path="res://Assets/Art/World/puente 2-3.png" id="16_4yu56"]
 [ext_resource type="Texture2D" uid="uid://3xcot30l7vqi" path="res://Assets/Art/World/Foreground/world_map parts-Sheet snakes.png" id="16_snakes"]
+[ext_resource type="Texture2D" uid="uid://sokmuacdot64" path="res://Assets/Art/World/puente 3-4.png" id="17_r8djo"]
 [ext_resource type="Texture2D" uid="uid://bf0dy52rrhms6" path="res://Assets/Art/World/Foreground/world_map parts-Sheet. arbolpng.png" id="17_tree"]
+[ext_resource type="Texture2D" uid="uid://d2ifk3c7vekvi" path="res://Assets/Art/World/puente 4-5.png" id="18_cjh4u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p41nb"]
 atlas = ExtResource("1_goa42")
@@ -702,6 +706,9 @@ libraries = {
 
 [node name="Area2D" type="Area2D" parent="Nivel2"]
 position = Vector2(-88, 88)
+script = ExtResource("5_lkwsl")
+nivel_id = 2
+level_scene = "res://Scenes/nivel_2.tscn"
 
 [node name="Sprite2D" type="Sprite2D" parent="Nivel2/Area2D"]
 position = Vector2(1202, 442)
@@ -722,6 +729,9 @@ shape = SubResource("CircleShape2D_kkfvo")
 
 [node name="Area2D" type="Area2D" parent="Nivel3"]
 position = Vector2(-535, -97)
+script = ExtResource("5_lkwsl")
+nivel_id = 3
+level_scene = "res://Scenes/nivel_3.tscn"
 
 [node name="Sprite2D" type="Sprite2D" parent="Nivel3/Area2D"]
 position = Vector2(701.99994, 584)
@@ -740,6 +750,9 @@ shape = SubResource("CircleShape2D_kkfvo")
 
 [node name="Area2D" type="Area2D" parent="Nivel4"]
 position = Vector2(-504, -280)
+script = ExtResource("5_lkwsl")
+nivel_id = 4
+level_scene = "res://Scenes/nivel_4.tscn"
 
 [node name="Sprite2D" type="Sprite2D" parent="Nivel4/Area2D"]
 position = Vector2(702, 590)
@@ -758,6 +771,9 @@ shape = SubResource("CircleShape2D_kkfvo")
 
 [node name="Area2D" type="Area2D" parent="Nivel5"]
 position = Vector2(1081, 315)
+script = ExtResource("5_lkwsl")
+nivel_id = 5
+level_scene = "res://Scenes/nivel_5.tscn"
 
 [node name="Sprite2D" type="Sprite2D" parent="Nivel5/Area2D"]
 position = Vector2(0, 32.00002)
@@ -794,15 +810,15 @@ polygon = PackedVector2Array(1.5384521, -0.5, 1.5384521, -0.5, 1.5384521, -4.5, 
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="mapa partes/StaticBody2D"]
 position = Vector2(1016, 567)
-polygon = PackedVector2Array(0, -3, 0, -19, 8, -19, 64, -19, 56, -11, 48, -3)
+polygon = PackedVector2Array(0, 9, 0, -19, 8, -19, 64, -19, 56, -11, 48, 9)
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="mapa partes/StaticBody2D"]
 position = Vector2(1248.4529, 556.94745)
-polygon = PackedVector2Array(-0.45288086, -4.9474487, -0.45288086, -20.947449, -56.45288, -20.947449, -56.45288, -4.9474487)
+polygon = PackedVector2Array(-0.45288086, 19.052551, -0.45288086, -20.947449, -56.45288, -20.947449, -56.45288, 19.052551)
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="mapa partes/StaticBody2D"]
 position = Vector2(1112, 500)
-polygon = PackedVector2Array(0, 0, -8, -4, -8, -12, -8, -8, -8, -16, 56, -16, 48, -8, 32, 0)
+polygon = PackedVector2Array(8, 12, -16, 12, -8, -12, -8, -8, -8, -16, 56, -16, 64, 12, 32, 12)
 
 [node name="Arbol" type="CollisionPolygon2D" parent="mapa partes/StaticBody2D"]
 position = Vector2(-40.264145, 480.22754)
@@ -866,22 +882,22 @@ autoplay = "default"
 position = Vector2(-19.475, 483)
 
 [node name="Visual" type="AnimatedSprite2D" parent="Arbol"]
-position = Vector2(657.475, -116)
+position = Vector2(660.475, -108)
 scale = Vector2(4.55, 4)
 sprite_frames = SubResource("SpriteFrames_tree")
 autoplay = "default"
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 z_index = 1
-position = Vector2(320, 288)
+position = Vector2(624, 616)
 script = ExtResource("7_ykhg3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 texture_repeat = 2
 position = Vector2(0, 40)
 scale = Vector2(2.25, 2.25)
-sprite_frames = ExtResource("10_yq38d")
-animation = &"walk_up"
+sprite_frames = ExtResource("14_ljoby")
+animation = &"walk_down"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
@@ -892,34 +908,141 @@ shape = SubResource("CapsuleShape2D_lkwsl")
 position = Vector2(640, 600)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Montaña1"]
-position = Vector2(0, -4)
-polygon = PackedVector2Array(0, 0, 0, 8, -128, 24, -256, 88, -256, 112, 232, 112, 176, 40, 96, 16, 56, 0, 0, 4, 8, -16, 0, -16, 0, 0, -8, -16, 0, -24, 8, -24, 16, -16, 8, -4, 64, -8, 104, 8, 192, 40, 240, 112, 240, 120, -264, 120, -264, 80, -128, 16, -8, 0)
+polygon = PackedVector2Array(0, 0, -72, 16, -128, 32, -184, 48, -232, 80, -248, 88, -224, 104, -24, 104, 192, 104, 224, 104, 176, 48, 152, 48, 136, 40, 144, 32, 160, 40, 192, 40, 232, 104, 232, 112, -240, 112, -264, 80, -184, 40, -128, 24, -72, 8, 8, -8, 88, 16, 88, 24)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Montaña1"]
+position = Vector2(90, 15)
+polygon = PackedVector2Array(-2, 1, -2, 9, 46, 25, 54, 17)
 
 [node name="Montaña2" type="StaticBody2D" parent="."]
-position = Vector2(1280, 1200)
+position = Vector2(1343, 431)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Montaña2"]
-position = Vector2(-483.11133, -681)
-scale = Vector2(0.23570809, 1)
-polygon = PackedVector2Array(13.199951, 1, 81.08032, -38.99997, 216.84155, -62.99997, 624.125, -86.99997, 1302.9307, -102.99997, 2151.438, -94.99997, 2321.1392, -86.99997, 2321.1392, 113, 1812.0352, 137, 861.70703, 89, 624.125, 89, 556.2444, 97, 386.54297, 81, 352.60278, 65, 182.90137, 65, -20.740479, 57, -54.680664, 25, 13.199951, 9, -54.680664, 9, -88.62109, 33, -54.680664, 65, 182.90137, 73, 352.60278, 73, 352.60278, 89, 556.2444, 105, 861.70703, 105, 1302.9307, 129, 1812.0352, 145, 2355.0796, 121, 2355.0796, -94.99997, 2151.438, -102.99997, 1302.9307, -110.99997, 624.125, -94.99997, 216.84155, -70.99997, 47.140137, -46.99997, -20.740479, 1)
+position = Vector2(-544, 83)
+polygon = PackedVector2Array(1, -2, 9, -18, 25, -42, 49, -58, 89, -66, 129, -74, 185, -82, 257, -90, 297, -98, 457, -90, 505, -90, 529, -82, 545, -82, 545, 118, 505, 126, 457, 134, 401, 142, 281, 110, 233, 102, 145, 94, 137, 102, 121, 102, 89, 94, 81, 70, 57, 62, 41, 70, 33, 78, 49, 78, 57, 70, 81, 94, 113, 110, 401, 150, 545, 126, 553, 126, 553, -90, 505, -98, 449, -98, 297, -106, 225, -90, 161, -82, 97, -74, 25, -58, -15, -26, -15, -2)
 
-[node name="Montaña3" type="StaticBody2D" parent="Montaña2"]
-position = Vector2(-1344, -808)
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Montaña2"]
+position = Vector2(-543, 81)
+polygon = PackedVector2Array(-16, 24, 0, 56, 24, 64, 40, 72, 32, 80, 0, 64, -16, 40, -24, 24)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Montaña2/Montaña3"]
-polygon = PackedVector2Array(-16, 0, -24, 0, -24, 216, 168, 256, 344, 200, 448, 224, 600, 152, 600, 112, 488, 32, 424, 8, 264, -8, 168, -24, -8, -16, -8, 0, 168, -16, 264, 0, 424, 16, 480, 40, 592, 120, 488, 176, 424, 184, 360, 168, 360, 168, 280, 192, 248, 184, 200, 208, 80, 184, 40, 176, -8, 176, -8, 0)
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Montaña2"]
+position = Vector2(-559, 81)
+polygon = PackedVector2Array(0, 0, 8, 24, 16, 24, 16, 0)
+
+[node name="Montaña3" type="StaticBody2D" parent="."]
+position = Vector2(-64, 392)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Montaña3"]
+position = Vector2(0, -7)
+polygon = PackedVector2Array(0, -1, 40, -1, 120, -17, 280, -9, 352, -1, 352, 15, 304, -1, 120, -9, 40, 7, 0, 7, 0, 191, 152, 215, 232, 207, 264, 199, 312, 191, 328, 183, 360, 183, 384, 183, 440, 191, 464, 191, 504, 199, 536, 191, 576, 175, 592, 159, 600, 151, 608, 159, 576, 191, 504, 215, 72, 231, -8, 215, -8, -1)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Montaña3"]
+position = Vector2(568, 88)
+polygon = PackedVector2Array(0, 0, 24, 24, 32, 40, 32, 56, 40, 64, 48, 56, 48, 24, 8, -8, 0, -8)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Montaña3"]
+position = Vector2(352, -8)
+polygon = PackedVector2Array(0, 0, 0, 16, 80, 24, 80, 8)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Montaña3"]
+position = Vector2(432, 0)
+polygon = PackedVector2Array(0, 0, 88, 48, 96, 56, 120, 72, 136, 80, 136, 88, 96, 64, 80, 56, 64, 40, 16, 16, 0, 16)
 
 [node name="Montaña4" type="StaticBody2D" parent="."]
 position = Vector2(-65, 208)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Montaña4"]
-polygon = PackedVector2Array(1, 0, -23, 0, -23, 168, 1, 168, 1, 8, 265, 0, 425, 8, 585, 48, 633, 80, 681, 160, 681, 184, 585, 224, 529, 240, 553, 256, 681, 200, 697, 176, 689, 152, 617, 48, 425, 0, 265, -16)
+polygon = PackedVector2Array(1, 0, 257, -16, 521, 8, 641, 64, 665, 128, 657, 136, 625, 72, 521, 24, 425, 8, 257, 0, 1, 8, 1, 184, -15, 184, -15, 0)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Montaña4"]
+position = Vector2(665, 128)
+polygon = PackedVector2Array(0, 0, -8, 8, 8, 40, 8, 56, -32, 72, -24, 88, 24, 64, 24, 32, 16, 16)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Montaña4"]
+position = Vector2(529, 240)
+polygon = PackedVector2Array(0, 0, 104, -40, 112, -24, 24, 16)
 
 [node name="Montaña5" type="StaticBody2D" parent="."]
 position = Vector2(1353, 224)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Montaña5"]
-polygon = PackedVector2Array(-1, 0, -1, 200, -9, 200, -9, 8, -89, 8, -105, 0, -129, -8, -177, -8, -313, 0, -481, 16, -537, 32, -601, 56, -625, 72, -641, 80, -657, 96, -673, 112, -689, 152, -697, 160, -681, 176, -665, 176, -641, 184, -609, 184, -569, 192, -537, 200, -521, 208, -497, 208, -473, 216, -505, 224, -697, 184, -705, 168, -705, 152, -673, 96, -601, 48, -481, 8, -273, -8, -129, -16, -89, 0)
+polygon = PackedVector2Array(-1, 0, -65, -8, -417, -16, -601, 40, -665, 88, -649, 96, -585, 48, -417, 0, -81, 0, -57, 8, -9, 8, -9, 200, -49, 192, -105, 192, -257, 184, -473, 216, -609, 184, -641, 184, -649, 192, -489, 224, -257, 192, -97, 200, -49, 200, -1, 208)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Montaña5"]
+position = Vector2(-649, 96)
+polygon = PackedVector2Array(0, 0, -40, 56, -40, 72, 8, 88, 0, 96, -56, 80, -56, 48, -16, -8)
+
+[node name="Puentes" type="Node2D" parent="."]
+
+[node name="puente1-2" type="Node2D" parent="Puentes"]
+
+[node name="Puente12" type="Sprite2D" parent="Puentes/puente1-2"]
+position = Vector2(638, 367)
+scale = Vector2(4.55, 4)
+texture = ExtResource("15_yqu4s")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Puentes/puente1-2"]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Puentes/puente1-2/StaticBody2D"]
+position = Vector2(776, 640)
+polygon = PackedVector2Array(0, 0, 8, -8, 16, -8, 24, -40, 64, -80, 72, -80, 64, -56, 48, -24, 16, 0)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Puentes/puente1-2/StaticBody2D"]
+position = Vector2(728, 624)
+polygon = PackedVector2Array(0, 0, 0, -8, 32, -24, 56, -56, 72, -88, 64, -88, 56, -72, 16, -32, -8, -24, -8, 0)
+
+[node name="puente2-3" type="Node2D" parent="Puentes"]
+
+[node name="Puente23" type="Sprite2D" parent="Puentes/puente2-3"]
+position = Vector2(638, 367)
+scale = Vector2(4.55, 4)
+texture = ExtResource("16_4yu56")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Puentes/puente2-3"]
+position = Vector2(638, 367)
+scale = Vector2(4.55, 4)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Puentes/puente2-3/StaticBody2D"]
+position = Vector2(33.846146, 42.25)
+polygon = PackedVector2Array(0, 0, -10.549438, 2, -21.098892, 4, -31.648346, 6, -33.406586, 6, -36.923065, 6, -42.1978, 4, -49.23076, 2, -56.263725, 0, -65.05493, -2, -65.05493, 0, -36.923065, 10, -28.131866, 10, 0, 2)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Puentes/puente2-3/StaticBody2D"]
+position = Vector2(32.08791, 36.25)
+polygon = PackedVector2Array(0, 0, -15.824173, 2, -24.615387, 4, -33.406586, 4, -49.23076, 0, -59.780212, -2, -61.538452, -10, -29.890106, 2, -12.3076935, 0, 0, -2)
+
+[node name="puente3-4" type="Node2D" parent="Puentes"]
+
+[node name="Puente34" type="Sprite2D" parent="Puentes/puente3-4"]
+position = Vector2(638, 367)
+scale = Vector2(4.55, 4)
+texture = ExtResource("17_r8djo")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Puentes/puente3-4"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Puentes/puente3-4/StaticBody2D"]
+position = Vector2(304, 408)
+polygon = PackedVector2Array(0, 0, 16, -24, 8, -24, -8, 0)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Puentes/puente3-4/StaticBody2D"]
+position = Vector2(352, 408)
+polygon = PackedVector2Array(0, 0, 8, -24, 16, -24, 8, 0)
+
+[node name="puente4-5" type="Node2D" parent="Puentes"]
+
+[node name="Puente45" type="Sprite2D" parent="Puentes/puente4-5"]
+position = Vector2(638, 367)
+scale = Vector2(4.55, 4)
+texture = ExtResource("18_cjh4u")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Puentes/puente4-5"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Puentes/puente4-5/StaticBody2D"]
+position = Vector2(592, 344)
+polygon = PackedVector2Array(0, 0, 8, 16, 88, 16, 112, -24, 96, -32, 8, -8)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Puentes/puente4-5/StaticBody2D"]
+position = Vector2(568, 408)
+polygon = PackedVector2Array(0, 0, 40, -16, 96, -16, 144, 0, 128, 16, 8, 16)
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -1084,6 +1207,14 @@ vertical_alignment = 1
 
 [connection signal="body_entered" from="Nivel1/Area2D" to="Nivel1/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Nivel1/Area2D" to="Nivel1/Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="Nivel2/Area2D" to="Nivel2/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Nivel2/Area2D" to="Nivel2/Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="Nivel3/Area2D" to="Nivel3/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Nivel3/Area2D" to="Nivel3/Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="Nivel4/Area2D" to="Nivel4/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Nivel4/Area2D" to="Nivel4/Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="Nivel5/Area2D" to="Nivel5/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Nivel5/Area2D" to="Nivel5/Area2D" method="_on_body_exited"]
 [connection signal="pressed" from="Control/Chatbot" to="." method="_on_chatbot_pressed"]
 [connection signal="pressed" from="Control/Menu_Hamburguesa" to="." method="_on_menu_hamburguesa_pressed"]
 [connection signal="pressed" from="Control/MenuPanel/Buttons/VolverMenu" to="." method="_on_volver_menu_pressed"]
